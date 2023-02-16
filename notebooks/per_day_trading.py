@@ -231,6 +231,7 @@ class DRLEnsembleAgentv2:
         self.print_verbosity = print_verbosity
         self.use_pretrain=use_pretrain
         self.pretrain_pth=pretrain_pth
+        self.best_sharpes=[]
 
     def DRL_validation(self, model, test_data, test_env, test_obs):
         """validation process"""
@@ -632,18 +633,21 @@ class DRLEnsembleAgentv2:
             if (sharpe_ppo >= sharpe_a2c) & (sharpe_ppo >= sharpe_ddpg):
                 model_use.append("PPO")
                 model_ensemble = model_ppo
+                self.best_sharpes.append(sharpe_ppo)
 
                 # model_ensemble = self.get_model("ppo",self.train_full_env,policy="MlpPolicy",model_kwargs=PPO_model_kwargs)
                 # model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['ppo']) #100_000
             elif (sharpe_a2c > sharpe_ppo) & (sharpe_a2c > sharpe_ddpg):
                 model_use.append("A2C")
                 model_ensemble = model_a2c
+                self.best_sharpes.append(sharpe_a2c)
 
                 # model_ensemble = self.get_model("a2c",self.train_full_env,policy="MlpPolicy",model_kwargs=A2C_model_kwargs)
                 # model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['a2c']) #100_000
             else:
                 model_use.append("DDPG")
                 model_ensemble = model_ddpg
+                self.best_sharpes.append(sharpe_ddpg)
 
                 # model_ensemble = self.get_model("ddpg",self.train_full_env,policy="MlpPolicy",model_kwargs=DDPG_model_kwargs)
                 # model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['ddpg']) #50_000
@@ -744,7 +748,7 @@ ensemble_agent = DRLEnsembleAgentv2(df=processed,
                  val_test_period=(TEST_START_DATE,TEST_END_DATE),
                  rebalance_window=rebalance_window, 
                  validation_window=validation_window,
-                 use_pretrain=True,
+                 use_pretrain=False,
                  pretrain_pth="/mnt/trained_models",                   
                  **env_kwargs)
                  
@@ -752,4 +756,6 @@ df_summary = ensemble_agent.run_ensemble_strategy(A2C_model_kwargs,
                                                  PPO_model_kwargs,
                                                  DDPG_model_kwargs,
                                                  timesteps_dict)
+print(f"Best Sharpe Lists is ")
+print(ensemble_agent.best_sharpes)
 print(df_summary)
