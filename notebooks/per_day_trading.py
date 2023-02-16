@@ -68,7 +68,7 @@ print(f"Stock Dimension: {stock_dimension}, State Space: {state_space}")
 
 
 env_kwargs = {
-    "hmax": 100, 
+    "hmax": 3, 
     "initial_amount": 200, 
     "buy_cost_pct": 0.01, 
     "sell_cost_pct": 0.01, 
@@ -615,7 +615,7 @@ class DRLEnsembleAgentv2:
             a2c_sharpe_list.append(sharpe_a2c)
             ddpg_sharpe_list.append(sharpe_ddpg)
 
-            print("======Best Model Retraining from: ",self.train_period[0],"to ",self.unique_trade_date[i - self.rebalance_window],)
+            #print("======Best Model Retraining from: ",self.train_period[0],"to ",self.unique_trade_date[i - self.rebalance_window],)
             # Environment setup for model retraining up to first trade date
             # train_full = data_split(self.df, start=self.train_period[0], end=self.unique_trade_date[i - self.rebalance_window])
             # self.train_full_env = DummyVecEnv([lambda: StockTradingEnv(train_full,
@@ -674,7 +674,7 @@ class DRLEnsembleAgentv2:
             ############## Trading ends ##############
         ## Train on full dataset
         print(f"*"*100)
-        print(f"Training on full data!!")
+        print(f"Training {model_use[-1]} on full data!!")
         print(f"*"*100)
         print(
                 "===== Training Model On Full Dataset from: ",
@@ -683,17 +683,20 @@ class DRLEnsembleAgentv2:
                 self.unique_trade_date[-1],
             )
         train_full = data_split(self.df, start=self.train_period[0], end=self.unique_trade_date[-1])
-        self.train_full_env = DummyVecEnv([lambda: StockTradingEnv(train_full,
-                                                            self.stock_dim,
-                                                            self.hmax,
-                                                            self.initial_amount,
-                                                            self.buy_cost_pct,
-                                                            self.sell_cost_pct,
-                                                            self.reward_scaling,
-                                                            self.state_space,
-                                                            self.action_space,
-                                                            self.tech_indicator_list,
-                                                            print_verbosity=self.print_verbosity)])
+        self.train_full_env = DummyVecEnv([lambda: StockTradingEnv(
+                                                            df=train_full,
+                                                            stock_dim=self.stock_dim,
+                                                            hmax=self.hmax,
+                                                            initial_amount=self.initial_amount,
+                                                            num_stock_shares=[0] * self.stock_dim,
+                                                            buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
+                                                            sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
+                                                            reward_scaling=self.reward_scaling,
+                                                            state_space=self.state_space,
+                                                            action_space=self.action_space,
+                                                            tech_indicator_list=self.tech_indicator_list,
+                                                            print_verbosity=self.print_verbosity
+                                                                  )])
         if model_use[-1]=="DDPG":
             model_ensemble = self.get_model("ddpg",self.train_full_env,policy="MlpPolicy",model_kwargs=DDPG_model_kwargs)
             if self.use_pretrain:
