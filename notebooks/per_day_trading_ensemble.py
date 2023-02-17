@@ -10,9 +10,13 @@ from finrl.meta.preprocessor.preprocessors import FeatureEngineer, data_split
 from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
 from finrl.agents.stablebaselines3.models import DRLAgent,DRLEnsembleAgent
 from finrl.plot import backtest_stats, backtest_plot, get_daily_return, get_baseline
+
 from pprint import pprint
 import sys
 import itertools
+
+
+
 from finrl import config
 from finrl import config_tickers
 import os
@@ -111,7 +115,7 @@ from finrl.agents.stablebaselines3.models import *
 
 
 
-class DRLAgent:
+class DRLEnsembleAgentv2:
     @staticmethod
     def get_model(
         model_name,
@@ -741,22 +745,20 @@ class DRLAgent:
         ]
 
         return df_summary
-
-if __name__=="__main__":    
-
-    agent = DRLAgentv(df=processed,
-                    train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
-                    val_test_period=(TEST_START_DATE,TEST_END_DATE),
-                    rebalance_window=rebalance_window, 
-                    validation_window=validation_window,
-                    use_pretrain=False,
-                    pretrain_pth="/mnt/trained_models",                   
-                    **env_kwargs)
-                    
-    df_summary = ensemble_agent.run_ensemble_strategy(A2C_model_kwargs,
-                                                    PPO_model_kwargs,
-                                                    DDPG_model_kwargs,
-                                                    timesteps_dict)
-    print(f"Best Sharpe Lists is ")
-    print(ensemble_agent.best_sharpes)
-    print(df_summary)
+        
+ensemble_agent = DRLEnsembleAgentv2(df=processed,
+                 train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
+                 val_test_period=(TEST_START_DATE,TEST_END_DATE),
+                 rebalance_window=rebalance_window, 
+                 validation_window=validation_window,
+                 use_pretrain=False,
+                 pretrain_pth="/mnt/trained_models",                   
+                 **env_kwargs)
+                 
+df_summary = ensemble_agent.run_ensemble_strategy(A2C_model_kwargs,
+                                                 PPO_model_kwargs,
+                                                 DDPG_model_kwargs,
+                                                 timesteps_dict)
+print(f"Best Sharpe Lists is ")
+print(ensemble_agent.best_sharpes)
+print(df_summary)
