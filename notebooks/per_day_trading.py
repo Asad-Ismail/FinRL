@@ -1,3 +1,4 @@
+from __future__ import annotations
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -30,21 +31,546 @@ from finrl.config import (
     TRADE_START_DATE,
     TRADE_END_DATE,
 )
+from finrl.meta.env_stock_trading.env_stocktrading import *
+import random
+from datetime import datetime, timedelta
+from finrl.agents.stablebaselines3.models import *
+
+TRAINED_MODEL_DIR="best_trained_model"
 check_and_make_directories([DATA_SAVE_DIR, TRAINED_MODEL_DIR, TENSORBOARD_LOG_DIR, RESULTS_DIR])
 
 
+class StockTradingEnv2(gym.Env):
+    """A stock trading environment for OpenAI gym"""
+    metadata = {"render.modes": ["human"]}
+    def __init__(
+        self,
+        df: pd.DataFrame,
+        stock_dim: int,
+        hmax: int,
+        initial_amount: int,
+        num_stock_shares: list[int],
+        buy_cost_pct: list[float],
+        sell_cost_pct: list[float],
+        reward_scaling: float,
+        state_space: int,
+        action_space: int,
+        tech_indicator_list: list[str],
+        turbulence_threshold=None,
+        risk_indicator_col="turbulence",
+        make_plots: bool = False,
+        print_verbosity=10,
+        day=0,
+        initial=True,
+        previous_state=[],
+        model_name="",
+        mode="",
+        iteration="",
+        random_day=None,
+        reset_interval=None,
+    ):
+        self.day = day
+        self.df = df
+        self.stock_dim = stock_dim
+        self.hmax = hmax
+        self.num_stock_shares = num_stock_shares
+        self.initial_amount = initial_amount  # get the initial cash
+        self.buy_cost_pct = buy_cost_pct
+        self.sell_cost_pct = sell_cost_pct
+        self.reward_scaling = reward_scaling
+        self.state_space = state_space
+        self.action_space = action_space
+        self.tech_indicator_list = tech_indicator_list
+        self.action_space = spaces.Box(low=-1, high=1, shape=(self.action_space,))
+        self.observation_space = spaces.Box(low=-np.inf, high=np.inf, shape=(self.state_space,))
+        self.data = self.df.loc[self.day, :]
+        self.terminal = False
+        self.make_plots = make_plots
+        self.print_verbosity = print_verbosity
+        self.turbulence_threshold = turbulence_threshold
+        self.risk_indicator_col = risk_indicator_col
+        self.initial = initial
+        self.previous_state = previous_state
+        self.model_name = model_name
+        self.mode = mode
+        self.iteration = iteration
+        self.random_day=random_day
+        # Since there are stock dim rows for each day 
+        self.reset_day=reset_interval*self.stock_dim
+        self.reset_interval=reset_interval
+        # initalize state
+        self.state = self._initiate_state()
+
+        # initialize reward
+        self.reward = 0
+        self.turbulence = 0
+        self.cost = 0
+        self.trades = 0
+        self.episode = 0
+        # memorize all the total balance change
+        self.asset_memory = [
+            self.initial_amount
+            + np.sum(
+                np.array(self.num_stock_shares)
+                * np.array(self.state[1 : 1 + self.stock_dim])
+            )
+        ]  # the initial total asset is calculated by cash + sum (num_share_stock_i * price_stock_i)
+        self.rewards_memory = []
+        self.actions_memory = []
+        self.state_memory = (
+            []
+        )  # we need sometimes to preserve the state in the middle of trading process
+        self.date_memory = [self._get_date()]
+        #         self.logger = Logger('results',[CSVOutputFormat])
+        # self.reset()
+        self._seed()
+        print(f"Intialize Environment StartDay: {self.day}, ResetDay: {self.reset_day},Episode: {self.episode}")
+
+    def _sell_stock(self, index, action):
+        def _do_sell_normal():
+            if (self.state[index + 2 * self.stock_dim + 1] != True):
+                # check if the stock is able to sell, for simlicity we just add it in techical index
+                # if self.state[index + 1] > 0: # if we use price<0 to denote a stock is unable to trade in that day, the total asset calculation may be wrong for the price is unreasonable
+                # Sell only if the price is > 0 (no missing data in this particular date)
+                # perform sell action based on the sign of the action
+                if self.state[index + self.stock_dim + 1] > 0:
+                    # Sell only if current asset is > 0
+                    sell_num_shares = min(abs(action), self.state[index + self.stock_dim + 1])
+                    sell_amount = (self.state[index + 1]* sell_num_shares* (1 - self.sell_cost_pct[index]))
+                    # update balance
+                    self.state[0] += sell_amount
+
+                    self.state[index + self.stock_dim + 1] -= sell_num_shares
+                    self.cost += (self.state[index + 1]* sell_num_shares* self.sell_cost_pct[index])
+                    self.trades += 1
+                else:
+                    sell_num_shares = 0
+            else:
+                sell_num_shares = 0
+
+            return sell_num_shares
+
+        # perform sell action based on the sign of the action
+        if self.turbulence_threshold is not None:
+            if self.turbulence >= self.turbulence_threshold:
+                if self.state[index + 1] > 0:
+                    # Sell only if the price is > 0 (no missing data in this particular date)
+                    # if turbulence goes over threshold, just clear out all positions
+                    if self.state[index + self.stock_dim + 1] > 0:
+                        # Sell only if current asset is > 0
+                        sell_num_shares = self.state[index + self.stock_dim + 1]
+                        sell_amount = (self.state[index + 1]* sell_num_shares* (1 - self.sell_cost_pct[index]))
+                        # update balance
+                        self.state[0] += sell_amount
+                        self.state[index + self.stock_dim + 1] = 0
+                        self.cost += (
+                            self.state[index + 1]
+                            * sell_num_shares
+                            * self.sell_cost_pct[index]
+                        )
+                        self.trades += 1
+                    else:
+                        sell_num_shares = 0
+                else:
+                    sell_num_shares = 0
+            else:
+                sell_num_shares = _do_sell_normal()
+        else:
+            sell_num_shares = _do_sell_normal()
+
+        return sell_num_shares
+
+    def _buy_stock(self, index, action):
+        def _do_buy():
+            if (self.state[index + 2 * self.stock_dim + 1] != True):  # check if the stock is able to buy
+                # if self.state[index + 1] >0:
+                # Buy only if the price is > 0 (no missing data in this particular date)
+                available_amount = self.state[0] // (
+                    self.state[index + 1] * (1 + self.buy_cost_pct[index])
+                )  # when buying stocks, we should consider the cost of trading when calculating available_amount, or we may be have cash<0
+                # print('available_amount:{}'.format(available_amount))
+
+                # update balance
+                buy_num_shares = min(available_amount, action)
+                buy_amount = (self.state[index + 1]* buy_num_shares* (1 + self.buy_cost_pct[index]))
+                self.state[0] -= buy_amount
+
+                self.state[index + self.stock_dim + 1] += buy_num_shares
+
+                self.cost += (self.state[index + 1] * buy_num_shares * self.buy_cost_pct[index])
+                self.trades += 1
+            else:
+                buy_num_shares = 0
+
+            return buy_num_shares
+
+        # perform buy action based on the sign of the action
+        if self.turbulence_threshold is None:
+            buy_num_shares = _do_buy()
+        else:
+            if self.turbulence < self.turbulence_threshold:
+                buy_num_shares = _do_buy()
+            else:
+                buy_num_shares = 0
+                pass
+
+        return buy_num_shares
+
+    def _make_plot(self):
+        plt.plot(self.asset_memory, "r")
+        plt.savefig(f"results/account_value_trade_{self.episode}.png")
+        plt.close()
+
+    def step(self, actions):
+        
+        if self.reset_day:
+            self.terminal = self.day >= self.reset_day
+            if self.terminal:
+                print(f"Environment reached Terminal state as number of trading days reached limit!!")
+        else:
+            self.terminal = self.day >= len(self.df.index.unique()) - 1
+            print(f"Environment reached Terminal state as number of trading days reached data limit!!")
+            
+        if self.terminal:
+            # print(f"Episode: {self.episode}")
+            if self.make_plots:
+                self._make_plot()
+            end_total_asset = self.state[0] + sum(
+                np.array(self.state[1 : (self.stock_dim + 1)])
+                * np.array(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
+            )
+            df_total_value = pd.DataFrame(self.asset_memory)
+            tot_reward = ( self.state[0] + sum(
+                    np.array(self.state[1 : (self.stock_dim + 1)])
+                    * np.array(
+                        self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)]
+                    )
+                )
+                - self.asset_memory[0]
+            )  # initial_amount is only cash part of our initial asset
+            df_total_value.columns = ["account_value"]
+            df_total_value["date"] = self.date_memory
+            df_total_value["daily_return"] = df_total_value["account_value"].pct_change(1)
+            if df_total_value["daily_return"].std() != 0:
+                sharpe = ((252**0.5)* df_total_value["daily_return"].mean()/ df_total_value["daily_return"].std())
+            df_rewards = pd.DataFrame(self.rewards_memory)
+            df_rewards.columns = ["account_rewards"]
+            df_rewards["date"] = self.date_memory[:-1]
+            if self.episode % self.print_verbosity == 0:
+                print(f"day: {self.day}, episode: {self.episode}")
+                print(f"begin_total_asset: {self.asset_memory[0]:0.2f}")
+                print(f"end_total_asset: {end_total_asset:0.2f}")
+                print(f"total_reward: {tot_reward:0.2f}")
+                print(f"total_cost: {self.cost:0.2f}")
+                print(f"total_trades: {self.trades}")
+                if df_total_value["daily_return"].std() != 0:
+                    print(f"Sharpe: {sharpe:0.3f}")
+                print("=================================")
+
+            if (self.model_name != "") and (self.mode != ""):
+                df_actions = self.save_action_memory()
+                df_actions.to_csv(
+                    "results/actions_{}_{}_{}.csv".format(
+                        self.mode, self.model_name, self.iteration
+                    )
+                )
+                df_total_value.to_csv(
+                    "results/account_value_{}_{}_{}.csv".format(
+                        self.mode, self.model_name, self.iteration
+                    ),
+                    index=False,
+                )
+                df_rewards.to_csv(
+                    "results/account_rewards_{}_{}_{}.csv".format(
+                        self.mode, self.model_name, self.iteration
+                    ),
+                    index=False,
+                )
+                plt.plot(self.asset_memory, "r")
+                plt.savefig(
+                    "results/account_value_{}_{}_{}.png".format(
+                        self.mode, self.model_name, self.iteration
+                    )
+                )
+                plt.close()
+
+            return self.state, self.reward, self.terminal, {}
+
+        else:
+            actions = actions * self.hmax  # actions initially is scaled between 0 to 1
+            actions = actions.astype(
+                int
+            )  # convert into integer because we can't by fraction of shares
+            if self.turbulence_threshold is not None:
+                if self.turbulence >= self.turbulence_threshold:
+                    actions = np.array([-self.hmax] * self.stock_dim)
+            begin_total_asset = self.state[0] + sum(
+                np.array(self.state[1 : (self.stock_dim + 1)])
+                * np.array(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
+            )
+            # print("begin_total_asset:{}".format(begin_total_asset))
+
+            argsort_actions = np.argsort(actions)
+            sell_index = argsort_actions[: np.where(actions < 0)[0].shape[0]]
+            buy_index = argsort_actions[::-1][: np.where(actions > 0)[0].shape[0]]
+
+            for index in sell_index:
+                # print(f"Num shares before: {self.state[index+self.stock_dim+1]}")
+                # print(f'take sell action before : {actions[index]}')
+                actions[index] = self._sell_stock(index, actions[index]) * (-1)
+                # print(f'take sell action after : {actions[index]}')
+                # print(f"Num shares after: {self.state[index+self.stock_dim+1]}")
+
+            for index in buy_index:
+                # print('take buy action: {}'.format(actions[index]))
+                actions[index] = self._buy_stock(index, actions[index])
+
+            self.actions_memory.append(actions)
+
+            # state: s -> s+1
+            #print(f"Trading Day {self.day}")
+            self.day += 1
+            self.data = self.df.loc[self.day, :]
+            if self.turbulence_threshold is not None:
+                if len(self.df.tic.unique()) == 1:
+                    self.turbulence = self.data[self.risk_indicator_col]
+                elif len(self.df.tic.unique()) > 1:
+                    self.turbulence = self.data[self.risk_indicator_col].values[0]
+            self.state = self._update_state()
+
+            end_total_asset = self.state[0] + sum(
+                np.array(self.state[1 : (self.stock_dim + 1)])
+                * np.array(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
+            )
+            self.asset_memory.append(end_total_asset)
+            self.date_memory.append(self._get_date())
+            self.reward = end_total_asset - begin_total_asset
+            self.rewards_memory.append(self.reward)
+            self.reward = self.reward * self.reward_scaling
+            self.state_memory.append(self.state)  # add current state in state_recorder for each step
+
+        return self.state, self.reward, self.terminal, {}
+
+    def reset(self):
+        # initiate state
+        self.state = self._initiate_state()
+
+        if self.initial:
+            self.asset_memory = [
+                self.initial_amount
+                + np.sum(
+                    np.array(self.num_stock_shares)
+                    * np.array(self.state[1 : 1 + self.stock_dim])
+                )
+            ]
+        else:
+            previous_total_asset = self.previous_state[0] + sum(
+                np.array(self.state[1 : (self.stock_dim + 1)])
+                * np.array(
+                    self.previous_state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)]
+                )
+            )
+            self.asset_memory = [previous_total_asset]
+            
+        ## Choose a random day for start of trading    
+        if self.random_day:
+            self.day = random.randint(0,len(self.df.index.unique())-self.reset_interval*self.stock_dim-2)
+            if self.reset_day:
+                self.reset_day=self.day+self.reset_interval*self.stock_dim
+        else:
+            self.day = 0
+            
+        self.data = self.df.loc[self.day, :]
+        self.turbulence = 0
+        self.cost = 0
+        self.trades = 0
+        self.terminal = False
+        # self.iteration=self.iteration
+        self.rewards_memory = []
+        self.actions_memory = []
+        self.date_memory = [self._get_date()]
+
+        self.episode += 1
+        print(f"Reseting Environment StartDay: {self.day}, ResetDay: {self.reset_day},Episode: {self.episode}")
+
+        return self.state
+
+    def render(self, mode="human", close=False):
+        return self.state
+
+    def _initiate_state(self):
+        if self.initial:
+            # For Initial State
+            if len(self.df.tic.unique()) > 1:
+                # for multiple stock
+                state = (
+                    [self.initial_amount]
+                    + self.data.close.values.tolist()
+                    + self.num_stock_shares
+                    + sum(
+                        (
+                            self.data[tech].values.tolist()
+                            for tech in self.tech_indicator_list
+                        ),
+                        [],
+                    )
+                )  # append initial stocks_share to initial state, instead of all zero
+            else:
+                # for single stock
+                state = (
+                    [self.initial_amount]
+                    + [self.data.close]
+                    + [0] * self.stock_dim
+                    + sum(([self.data[tech]] for tech in self.tech_indicator_list), [])
+                )
+        else:
+            # Using Previous State
+            if len(self.df.tic.unique()) > 1:
+                # for multiple stock
+                state = (
+                    [self.previous_state[0]]
+                    + self.data.close.values.tolist()
+                    + self.previous_state[
+                        (self.stock_dim + 1) : (self.stock_dim * 2 + 1)
+                    ]
+                    + sum(
+                        (
+                            self.data[tech].values.tolist()
+                            for tech in self.tech_indicator_list
+                        ),
+                        [],
+                    )
+                )
+            else:
+                # for single stock
+                state = (
+                    [self.previous_state[0]]
+                    + [self.data.close]
+                    + self.previous_state[
+                        (self.stock_dim + 1) : (self.stock_dim * 2 + 1)
+                    ]
+                    + sum(([self.data[tech]] for tech in self.tech_indicator_list), [])
+                )
+        return state
+
+    def _update_state(self):
+        if len(self.df.tic.unique()) > 1:
+            # for multiple stock
+            state = (
+                [self.state[0]]
+                + self.data.close.values.tolist()
+                + list(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
+                + sum(
+                    (
+                        self.data[tech].values.tolist()
+                        for tech in self.tech_indicator_list
+                    ),
+                    [],
+                )
+            )
+
+        else:
+            # for single stock
+            state = (
+                [self.state[0]]
+                + [self.data.close]
+                + list(self.state[(self.stock_dim + 1) : (self.stock_dim * 2 + 1)])
+                + sum(([self.data[tech]] for tech in self.tech_indicator_list), [])
+            )
+
+        return state
+
+    def _get_date(self):
+        if len(self.df.tic.unique()) > 1:
+            date = self.data.date.unique()[0]
+        else:
+            date = self.data.date
+        return date
+
+    # add save_state_memory to preserve state in the trading process
+    def save_state_memory(self):
+        if len(self.df.tic.unique()) > 1:
+            # date and close price length must match actions length
+            date_list = self.date_memory[:-1]
+            df_date = pd.DataFrame(date_list)
+            df_date.columns = ["date"]
+
+            state_list = self.state_memory
+            df_states = pd.DataFrame(
+                state_list,
+                columns=[
+                    "cash",
+                    "Bitcoin_price",
+                    "Gold_price",
+                    "Bitcoin_num",
+                    "Gold_num",
+                    "Bitcoin_Disable",
+                    "Gold_Disable",
+                ],
+            )
+            df_states.index = df_date.date
+            # df_actions = pd.DataFrame({'date':date_list,'actions':action_list})
+        else:
+            date_list = self.date_memory[:-1]
+            state_list = self.state_memory
+            df_states = pd.DataFrame({"date": date_list, "states": state_list})
+        # print(df_states)
+        return df_states
+
+    def save_asset_memory(self):
+        date_list = self.date_memory
+        asset_list = self.asset_memory
+        df_account_value = pd.DataFrame(
+            {"date": date_list, "account_value": asset_list}
+        )
+        return df_account_value
+
+    def save_action_memory(self):
+        if len(self.df.tic.unique()) > 1:
+            # date and close price length must match actions length
+            date_list = self.date_memory[:-1]
+            df_date = pd.DataFrame(date_list)
+            df_date.columns = ["date"]
+
+            action_list = self.actions_memory
+            df_actions = pd.DataFrame(action_list)
+            df_actions.columns = self.data.tic.values
+            df_actions.index = df_date.date
+            # df_actions = pd.DataFrame({'date':date_list,'actions':action_list})
+        else:
+            date_list = self.date_memory[:-1]
+            action_list = self.actions_memory
+            df_actions = pd.DataFrame({"date": date_list, "actions": action_list})
+        return df_actions
+
+    def _seed(self, seed=None):
+        self.np_random, seed = seeding.np_random(seed)
+        return [seed]
+
+    def get_sb_env(self):
+        e = DummyVecEnv([lambda: self])
+        obs = e.reset()
+        return e, obs
+
+def get_nth_previous_date(n):
+    today = datetime.today()
+    nth_previous_date = today - timedelta(days=n)
+    return nth_previous_date.strftime('%Y-%m-%d')
+
+
+#validate on last n days
+n=20
+TRAIN_END_DATE=TEST_START_DATE=get_nth_previous_date(n)
+TRAIN_END_DATE
 
 TRAIN_START_DATE = '2005-04-01'
-TRAIN_END_DATE = '2022-01-01'
-TEST_START_DATE = '2022-01-01'
 # Test date is something unreachable in this lifetime
 TEST_END_DATE = '2080-02-16'
-
 df = YahooDownloader(start_date = TRAIN_START_DATE,
                      end_date = TEST_END_DATE,
                      ticker_list = DOW_30_TICKER).fetch_data()
-                     
-                     
+
+
 fe = FeatureEngineer(use_technical_indicator=True,
                      tech_indicator_list = INDICATORS,
                      use_turbulence=True,
@@ -55,16 +581,12 @@ processed = processed.copy()
 processed = processed.fillna(0)
 processed = processed.replace(np.inf,0)
 
-
-
-
 stock_dimension = len(processed.tic.unique())
 state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension
 print(f"Stock Dimension: {stock_dimension}, State Space: {state_space}")
 
-
 env_kwargs = {
-    "hmax": 3, 
+    "hmax": 1, 
     "initial_amount": 200, 
     "buy_cost_pct": 0.01, 
     "sell_cost_pct": 0.01, 
@@ -74,13 +596,7 @@ env_kwargs = {
     "action_space": stock_dimension, 
     "reward_scaling": 1e-4,
     "print_verbosity":5
-    
 }
-
-
-rebalance_window = 63 # rebalance_window is the number of days to retrain the model
-validation_window = 63 # validation_window is the number of days to do validation and trading (e.g. if validation_window=63, then both validation and trading period will be 63 days)
-
 
 A2C_model_kwargs = {
                     'n_steps': 5,
@@ -103,13 +619,9 @@ DDPG_model_kwargs = {
                     }
 
 timesteps_dict = {'a2c' : 10_0000, 
-                 'ppo' : 10_0000, 
+                 'ppo' : 1e7, 
                  'ddpg' : 10_0000
                  }
-                 
-from finrl.agents.stablebaselines3.models import *
-
-
 
 class DRLAgent:
     @staticmethod
@@ -148,14 +660,18 @@ class DRLAgent:
 
     @staticmethod
     def train_model(model, model_name, tb_log_name, iter_num, total_timesteps=5000):
-        model = model.learn(
-            total_timesteps=total_timesteps,
-            tb_log_name=tb_log_name,
-            callback=TensorboardCallback(),
-        )
-        model.save(
-            f"{config.TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps // 1000}k_{iter_num}"
-        )
+        print(f"Training model for total timestamps of {total_timesteps}")
+        for i in range(30):
+        #model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name="PPO")
+        #model.save(f"{models_dir}/{TIMESTEPS*i}")
+            model = model.learn(
+                total_timesteps=total_timesteps,
+                tb_log_name=tb_log_name,
+                callback=TensorboardCallback(),
+                progress_bar=True
+            )
+            model.save(
+                f"{TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps*i // 1000}k")
         return model
 
     @staticmethod
@@ -192,8 +708,6 @@ class DRLAgent:
         df,
         train_period,
         val_test_period,
-        rebalance_window,
-        validation_window,
         stock_dim,
         hmax,
         initial_amount,
@@ -206,15 +720,14 @@ class DRLAgent:
         print_verbosity,
         use_pretrain=False,
         pretrain_pth="",
+        best_model="ppo",
+        reset_interval=60
+        
     ):
         self.df = df
         self.train_period = train_period
         self.val_test_period = val_test_period
-
         self.unique_trade_date = df[(df.date > val_test_period[0]) & (df.date <= val_test_period[1])].date.unique()
-        self.rebalance_window = rebalance_window
-        self.validation_window = validation_window
-
         self.stock_dim = stock_dim
         self.hmax = hmax
         self.initial_amount = initial_amount
@@ -227,7 +740,8 @@ class DRLAgent:
         self.print_verbosity = print_verbosity
         self.use_pretrain=use_pretrain
         self.pretrain_pth=pretrain_pth
-        self.best_sharpes=[]
+        self.best_model=best_model
+        self.reset_interval=reset_interval
 
     def DRL_validation(self, model, test_data, test_env, test_obs):
         """validation process"""
@@ -239,12 +753,12 @@ class DRLAgent:
         self, model, name, last_state, iter_num, turbulence_threshold, initial
     ):
         """make a prediction based on trained model"""
-
+        
         ## trading env
         trade_data = data_split(
             self.df,
-            start=self.unique_trade_date[iter_num - self.rebalance_window],
-            end=self.unique_trade_date[iter_num],
+            start=self.unique_trade_date[0],
+            end=self.unique_trade_date[-1],
         )
         trade_env = DummyVecEnv(
             [
@@ -275,7 +789,7 @@ class DRLAgent:
 
         for i in range(len(trade_data.index.unique())):
             action, _states = model.predict(trade_obs)
-            print(f"Training actions are {action}")
+            #print(f"Training actions are {action}")
             trade_obs, rewards, dones, info = trade_env.step(action)
             if i == (len(trade_data.index.unique()) - 2):
                 # print(env_test.render())
@@ -331,96 +845,65 @@ class DRLAgent:
 
         return actions,last_state
 
-    def run_ensemble_strategy(
-        self, A2C_model_kwargs, PPO_model_kwargs, DDPG_model_kwargs, timesteps_dict
-    ):
+    def run_strategy(self, A2C_model_kwargs, PPO_model_kwargs, DDPG_model_kwargs, timesteps_dict):
+        i=1
         """Ensemble Strategy that combines PPO, A2C and DDPG"""
-        print("============Start Ensemble Strategy============")
-        # for ensemble model, it's necessary to feed the last state
-        # of the previous model to the current model as the initial state
-        last_state_ensemble = []
+        print("============Training Best Model============")
 
-        ppo_sharpe_list = []
-        ddpg_sharpe_list = []
-        a2c_sharpe_list = []
+        insample_turbulence = self.df[(self.df.date < self.train_period[1])& (self.df.date >= self.train_period[0])]
+        insample_turbulence_threshold = np.quantile(insample_turbulence.turbulence.values, 0.90)
+        
+        historical_turbulence = insample_turbulence.drop_duplicates(subset=["date"])
+        historical_turbulence_mean = np.mean(historical_turbulence.turbulence.values)
+        
+        if historical_turbulence_mean > insample_turbulence_threshold:
+            # if the mean of the historical data is greater than the 90% quantile of insample turbulence data
+            # then we assume that the current market is volatile,
+            # therefore we set the 90% quantile of insample turbulence data as the turbulence threshold
+            # meaning the current turbulence can't exceed the 90% quantile of insample turbulence data
+            turbulence_threshold = insample_turbulence_threshold
+        else:
+            # if the mean of the historical data is less than the 90% quantile of insample turbulence data
+            # then we tune up the turbulence_threshold, meaning we lower the risk
+            turbulence_threshold = np.quantile(insample_turbulence.turbulence.values, 1)
 
-        model_use = []
-        validation_start_date_list = []
-        validation_end_date_list = []
-        iteration_list = []
+        #turbulence_threshold = np.quantile(insample_turbulence.turbulence.values, 0.99)
+        
+        print("Turbulence_threshold: ", turbulence_threshold)
 
-        insample_turbulence = self.df[
-            (self.df.date < self.train_period[1])
-            & (self.df.date >= self.train_period[0])
-        ]
-        insample_turbulence_threshold = np.quantile(
-            insample_turbulence.turbulence.values, 0.90
-        )
+        self.turbulence_threshold=turbulence_threshold
 
         start = time.time()
-        for i in range(self.rebalance_window + self.validation_window, len(self.unique_trade_date),self.rebalance_window,):
-            validation_start_date = self.unique_trade_date[i - self.rebalance_window - self.validation_window]
-            validation_end_date = self.unique_trade_date[i - self.rebalance_window]
-            validation_start_date_list.append(validation_start_date)
-            validation_end_date_list.append(validation_end_date)
-            iteration_list.append(i)
 
-            print("============================================")
-            ## initial state is empty
-            if i - self.rebalance_window - self.validation_window == 0:
-                # inital state
-                initial = True
-            else:
-                # previous state
-                initial = False
-
-            # Tuning trubulence index based on historical data
-            # Turbulence lookback window is one quarter (63 days)
-            end_date_index = self.df.index[self.df["date"]== self.unique_trade_date[i - self.rebalance_window - self.validation_window]
-            ].to_list()[-1]
-            start_date_index = end_date_index - 63 + 1
-
-            historical_turbulence = self.df.iloc[start_date_index : (end_date_index + 1), :]
-
-            historical_turbulence = historical_turbulence.drop_duplicates(subset=["date"])
-
-            historical_turbulence_mean = np.mean(historical_turbulence.turbulence.values)
-
-            # print(historical_turbulence_mean)
-
-            if historical_turbulence_mean > insample_turbulence_threshold:
-                # if the mean of the historical data is greater than the 90% quantile of insample turbulence data
-                # then we assume that the current market is volatile,
-                # therefore we set the 90% quantile of insample turbulence data as the turbulence threshold
-                # meaning the current turbulence can't exceed the 90% quantile of insample turbulence data
-                turbulence_threshold = insample_turbulence_threshold
-            else:
-                # if the mean of the historical data is less than the 90% quantile of insample turbulence data
-                # then we tune up the turbulence_threshold, meaning we lower the risk
-                turbulence_threshold = np.quantile(
-                    insample_turbulence.turbulence.values, 1
+        ############## Environment Setup starts ##############
+        ## training env
+        train = data_split(self.df,start=self.train_period[0],end=self.train_period[1],)
+        stday = random.randint(0,len(train.index.unique())-(self.reset_interval*self.stock_dim)-2)
+        self.train_env = DummyVecEnv(
+            [
+                lambda: StockTradingEnv2(
+                    df=train,
+                    stock_dim=self.stock_dim,
+                    hmax=self.hmax,
+                    initial_amount=self.initial_amount,
+                    num_stock_shares=[0] * self.stock_dim,
+                    buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
+                    sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
+                    reward_scaling=self.reward_scaling,
+                    state_space=self.state_space,
+                    action_space=self.action_space,
+                    tech_indicator_list=self.tech_indicator_list,
+                    print_verbosity=self.print_verbosity,
+                    random_day=stday,
+                    reset_interval=self.reset_interval
                 )
-
-            turbulence_threshold = np.quantile(
-                insample_turbulence.turbulence.values, 0.99
+            ]
             )
-            print("turbulence_threshold: ", turbulence_threshold)
-            
-            self.turbulence_threshold=turbulence_threshold
-
-            ############## Environment Setup starts ##############
-            ## training env
-            train = data_split(
-                self.df,
-                start=self.train_period[0],
-                end=self.unique_trade_date[
-                    i - self.rebalance_window - self.validation_window
-                ],
-            )
-            self.train_env = DummyVecEnv(
+        validation = data_split(self.df,start=self.unique_trade_date[0],end=self.unique_trade_date[-1],)
+        val_env = DummyVecEnv(
                 [
                     lambda: StockTradingEnv(
-                        df=train,
+                        df=validation,
                         stock_dim=self.stock_dim,
                         hmax=self.hmax,
                         initial_amount=self.initial_amount,
@@ -431,31 +914,28 @@ class DRLAgent:
                         state_space=self.state_space,
                         action_space=self.action_space,
                         tech_indicator_list=self.tech_indicator_list,
+                        turbulence_threshold=turbulence_threshold,
+                        iteration=1,
+                        model_name="BestModel",
+                        mode="validation",
                         print_verbosity=self.print_verbosity,
                     )
                 ]
             )
-            validation = data_split(self.df,start=self.unique_trade_date[i - self.rebalance_window - self.validation_window
-                ],
-                end=self.unique_trade_date[i - self.rebalance_window],
-            )
-            ############## Environment Setup ends ##############
-
-            ############## Training and Validation starts ##############
-            print(
-                "======Model training from: ",
-                self.train_period[0],
-                "to ",
-                self.unique_trade_date[
-                    i - self.rebalance_window - self.validation_window
-                ],
-            )
-            # print("training: ",len(data_split(df, start=20090000, end=test.datadate.unique()[i-rebalance_window]) ))
-            # print("==============Model Training===========")
+        val_obs = val_env.reset()
+        ############## Environment Setup ends ##############
+        ############## Training and Validation starts ##############
+        print(
+            "======Model training from: ",
+            self.train_period[0],
+            "to ",
+            self.train_period[1]
+        )
+        if self.best_model=="a2c":
             model_a2c = self.get_model("a2c", self.train_env, policy="MlpPolicy", model_kwargs=A2C_model_kwargs)
             if self.use_pretrain:
                 print("======Loading A2C Pretrained Model========")
-                model_a2c.load(os.path.join(self.pretrain_pth,DRLEnsembleAgentv2.get_modelWeights("a2c",self.pretrain_pth)))
+                model_a2c.load(os.path.join(self.pretrain_pth,self.get_modelWeights("a2c",self.pretrain_pth)))
             print("======A2C Training========")
             model_a2c = self.train_model(
                 model_a2c,
@@ -463,50 +943,28 @@ class DRLAgent:
                 tb_log_name=f"a2c_{i}",
                 iter_num=i,
                 total_timesteps=timesteps_dict["a2c"],
-            )  # 100_000
-
-            print(
-                "======A2C Validation from: ",
+            )  
+            print("======A2C Validation from: ",
                 validation_start_date,
                 "to ",
-                validation_end_date,
-            )
-            val_env_a2c = DummyVecEnv(
-                [
-                    lambda: StockTradingEnv(
-                        df=validation,
-                        stock_dim=self.stock_dim,
-                        hmax=self.hmax,
-                        initial_amount=self.initial_amount,
-                        num_stock_shares=[0] * self.stock_dim,
-                        buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
-                        sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
-                        reward_scaling=self.reward_scaling,
-                        state_space=self.state_space,
-                        action_space=self.action_space,
-                        tech_indicator_list=self.tech_indicator_list,
-                        turbulence_threshold=turbulence_threshold,
-                        iteration=i,
-                        model_name="A2C",
-                        mode="validation",
-                        print_verbosity=self.print_verbosity,
-                    )
-                ]
-            )
-            val_obs_a2c = val_env_a2c.reset()
+                validation_end_date,)
             self.DRL_validation(
                 model=model_a2c,
                 test_data=validation,
-                test_env=val_env_a2c,
-                test_obs=val_obs_a2c,
+                test_env=val_env,
+                test_obs=val_obs,
             )
-            sharpe_a2c = self.get_validation_sharpe(i, model_name="A2C")
+            sharpe_a2c = self.get_validation_sharpe(1, model_name="BestModel")
             print("A2C Sharpe Ratio: ", sharpe_a2c)
-
+            self.sharpe=sharpe_a2c
+            self.model=model_a2c
+            
+        elif self.best_model=="ppo":
+            
             model_ppo = self.get_model("ppo", self.train_env, policy="MlpPolicy", model_kwargs=PPO_model_kwargs)
             if self.use_pretrain:
                 print("======Loading PPO Pretrained Model========")
-                model_ppo.load(os.path.join(self.pretrain_pth,DRLEnsembleAgentv2.get_modelWeights("ppo",self.pretrain_pth)))
+                model_ppo.load(os.path.join(self.pretrain_pth,self.get_modelWeights("ppo",self.pretrain_pth)))
             print("======PPO Training========")
             model_ppo = self.train_model(
                 model_ppo,
@@ -514,44 +972,25 @@ class DRLAgent:
                 tb_log_name=f"ppo_{i}",
                 iter_num=i,
                 total_timesteps=timesteps_dict["ppo"],
-            )  # 100_000
+            )
             print(
                 "======PPO Validation from: ",
-                validation_start_date,
+                self.unique_trade_date[0],
                 "to ",
-                validation_end_date,
+                self.unique_trade_date[-1],
             )
-            val_env_ppo = DummyVecEnv(
-                [
-                    lambda: StockTradingEnv(
-                        df=validation,
-                        stock_dim=self.stock_dim,
-                        hmax=self.hmax,
-                        initial_amount=self.initial_amount,
-                        num_stock_shares=[0] * self.stock_dim,
-                        buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
-                        sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
-                        reward_scaling=self.reward_scaling,
-                        state_space=self.state_space,
-                        action_space=self.action_space,
-                        tech_indicator_list=self.tech_indicator_list,
-                        turbulence_threshold=turbulence_threshold,
-                        iteration=i,
-                        model_name="PPO",
-                        mode="validation",
-                        print_verbosity=self.print_verbosity,
-                    )
-                ]
-            )
-            val_obs_ppo = val_env_ppo.reset()
             self.DRL_validation(
                 model=model_ppo,
                 test_data=validation,
-                test_env=val_env_ppo,
-                test_obs=val_obs_ppo,
+                test_env=val_env,
+                test_obs=val_obs,
             )
-            sharpe_ppo = self.get_validation_sharpe(i, model_name="PPO")
+            sharpe_ppo = self.get_validation_sharpe(1, model_name="BestModel")
             print("PPO Sharpe Ratio: ", sharpe_ppo)
+            self.sharpe=sharpe_ppo
+            self.model=model_ppo
+        
+        elif self.best_model=="ddpg":
             
             model_ddpg = self.get_model(
                 "ddpg",
@@ -561,7 +1000,7 @@ class DRLAgent:
             )
             if self.use_pretrain:
                 print("======Loading DDPG Pretrained Model========")
-                model_ddpg.load(os.path.join(self.pretrain_pth,DRLEnsembleAgentv2.get_modelWeights("ddpg",self.pretrain_pth)))
+                model_ddpg.load(os.path.join(self.pretrain_pth,self.get_modelWeights("ddpg",self.pretrain_pth)))
             print("======DDPG Training========")
             model_ddpg = self.train_model(
                 model_ddpg,
@@ -570,193 +1009,52 @@ class DRLAgent:
                 iter_num=i,
                 total_timesteps=timesteps_dict["ddpg"],
             )  # 50_000
-            print(
-                "======DDPG Validation from: ",
-                validation_start_date,
-                "to ",
-                validation_end_date,
-            )
-            val_env_ddpg = DummyVecEnv(
-                [
-                    lambda: StockTradingEnv(
-                        df=validation,
-                        stock_dim=self.stock_dim,
-                        hmax=self.hmax,
-                        initial_amount=self.initial_amount,
-                        num_stock_shares=[0] * self.stock_dim,
-                        buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
-                        sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
-                        reward_scaling=self.reward_scaling,
-                        state_space=self.state_space,
-                        action_space=self.action_space,
-                        tech_indicator_list=self.tech_indicator_list,
-                        turbulence_threshold=turbulence_threshold,
-                        iteration=i,
-                        model_name="DDPG",
-                        mode="validation",
-                        print_verbosity=self.print_verbosity,
-                    )
-                ]
-            )
-            val_obs_ddpg = val_env_ddpg.reset()
+            
             self.DRL_validation(
                 model=model_ddpg,
                 test_data=validation,
-                test_env=val_env_ddpg,
-                test_obs=val_obs_ddpg,
+                test_env=val_env,
+                test_obs=val_obs,
             )
-            sharpe_ddpg = self.get_validation_sharpe(i, model_name="DDPG")
-
-            ppo_sharpe_list.append(sharpe_ppo)
-            a2c_sharpe_list.append(sharpe_a2c)
-            ddpg_sharpe_list.append(sharpe_ddpg)
-
-            #print("======Best Model Retraining from: ",self.train_period[0],"to ",self.unique_trade_date[i - self.rebalance_window],)
-            # Environment setup for model retraining up to first trade date
-            # train_full = data_split(self.df, start=self.train_period[0], end=self.unique_trade_date[i - self.rebalance_window])
-            # self.train_full_env = DummyVecEnv([lambda: StockTradingEnv(train_full,
-            #                                                    self.stock_dim,
-            #                                                    self.hmax,
-            #                                                    self.initial_amount,
-            #                                                    self.buy_cost_pct,
-            #                                                    self.sell_cost_pct,
-            #                                                    self.reward_scaling,
-            #                                                    self.state_space,
-            #                                                    self.action_space,
-            #                                                    self.tech_indicator_list,
-            #                                                    print_verbosity=self.print_verbosity)])
-            # Model Selection based on sharpe ratio
-            if (sharpe_ppo >= sharpe_a2c) & (sharpe_ppo >= sharpe_ddpg):
-                model_use.append("PPO")
-                model_ensemble = model_ppo
-                self.best_sharpes.append(sharpe_ppo)
-
-                # model_ensemble = self.get_model("ppo",self.train_full_env,policy="MlpPolicy",model_kwargs=PPO_model_kwargs)
-                # model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['ppo']) #100_000
-            elif (sharpe_a2c > sharpe_ppo) & (sharpe_a2c > sharpe_ddpg):
-                model_use.append("A2C")
-                model_ensemble = model_a2c
-                self.best_sharpes.append(sharpe_a2c)
-
-                # model_ensemble = self.get_model("a2c",self.train_full_env,policy="MlpPolicy",model_kwargs=A2C_model_kwargs)
-                # model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['a2c']) #100_000
-            else:
-                model_use.append("DDPG")
-                model_ensemble = model_ddpg
-                self.best_sharpes.append(sharpe_ddpg)
-
-                # model_ensemble = self.get_model("ddpg",self.train_full_env,policy="MlpPolicy",model_kwargs=DDPG_model_kwargs)
-                # model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['ddpg']) #50_000
+            sharpe_ddpg = self.get_validation_sharpe(1, model_name="BestModel")
+            print("DDPg Sharpe Ratio: ", sharpe_ddpg)
+            self.sharpe=sharpe_ddpg
+            self.model=model_ddpg
             
-            #self.final_model=model_ensemble
-            ############## Training and Validation ends ##############
-
-            ############## Trading starts ##############
-            print(
-                "======Trading from: ",
-                self.unique_trade_date[i - self.rebalance_window],
-                "to ",
-                self.unique_trade_date[i],
-            )
-            # print("Used Model: ", model_ensemble)
-            last_state_ensemble = self.DRL_prediction(
-                model=model_ensemble,
-                name="ensemble",
-                last_state=last_state_ensemble,
-                iter_num=i,
-                turbulence_threshold=turbulence_threshold,
-                initial=initial,
-            )
-            ############## Trading ends ##############
-        ## Train on full dataset
-        print(f"*"*100)
-        print(f"Training {model_use[-1]} on full data!!")
-        print(f"*"*100)
-        print(
-                "===== Training Model On Full Dataset from: ",
-                self.train_period[0],
-                "to ",
-                self.unique_trade_date[-1],
-            )
-        train_full = data_split(self.df, start=self.train_period[0], end=self.unique_trade_date[-1])
-        self.train_full_env = DummyVecEnv([lambda: StockTradingEnv(
-                                                            df=train_full,
-                                                            stock_dim=self.stock_dim,
-                                                            hmax=self.hmax,
-                                                            initial_amount=self.initial_amount,
-                                                            num_stock_shares=[0] * self.stock_dim,
-                                                            buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
-                                                            sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
-                                                            reward_scaling=self.reward_scaling,
-                                                            state_space=self.state_space,
-                                                            action_space=self.action_space,
-                                                            tech_indicator_list=self.tech_indicator_list,
-                                                            print_verbosity=self.print_verbosity
-                                                                  )])
-        if model_use[-1]=="DDPG":
-            model_ensemble = self.get_model("ddpg",self.train_full_env,policy="MlpPolicy",model_kwargs=DDPG_model_kwargs)
-            if self.use_pretrain:
-                print("======Loading DDPG Pretrained Model========")
-                model_ensemble.load(os.path.join(self.pretrain_pth,DRLEnsembleAgentv2.get_modelWeights("ddpg",self.pretrain_pth)))
-            model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="full_ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['ddpg'])
-        elif model_use[-1]=="A2C":
-            model_ensemble = self.get_model("a2c",self.train_full_env,policy="MlpPolicy",model_kwargs=A2C_model_kwargs)
-            if self.use_pretrain:
-                print("======Loading A2C Pretrained Model========")
-                model_ensemble.load(os.path.join(self.pretrain_pth,DRLEnsembleAgentv2.get_modelWeights("a2c",self.pretrain_pth)))
-            model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="full_ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['a2c'])
         else:
-            model_ensemble = self.get_model("ppo",self.train_full_env,policy="MlpPolicy",model_kwargs=PPO_model_kwargs)
-            if self.use_pretrain:
-                print("======Loading PPO Pretrained Model========")
-                model_ensemble.load(os.path.join(self.pretrain_pth,DRLEnsembleAgentv2.get_modelWeights("ppo",self.pretrain_pth)))
-            model_ensemble = self.train_model(model_ensemble, "ensemble", tb_log_name="full_ensemble_{}".format(i), iter_num = i, total_timesteps=timesteps_dict['ppo']) #100
-            
+            raise NotImplementedError
 
+        ############## Trading starts ##############
+        print("======Trading from: ",
+            self.unique_trade_date[0],
+            "to ",
+            self.unique_trade_date[-1],)
+        
+        last_state_ensemble = self.DRL_prediction(
+            model=self.model,
+            name="BestModel",
+            last_state=[],
+            iter_num=1,
+            turbulence_threshold=turbulence_threshold,
+            initial=True,
+        )
+        
         end = time.time()
-        print("Ensemble Strategy took: ", (end - start) / 60, " minutes")
+        print("Training Strategy took: ", (end - start) / 60, " minutes")
         ## Assign the model as final model
-        self.final_model=model_ensemble
-        self.final_model_name=model_use[-1]
+        return True
 
-        df_summary = pd.DataFrame(
-            [
-                iteration_list,
-                validation_start_date_list,
-                validation_end_date_list,
-                model_use,
-                a2c_sharpe_list,
-                ppo_sharpe_list,
-                ddpg_sharpe_list,
-            ]
-        ).T
-        df_summary.columns = [
-            "Iter",
-            "Val Start",
-            "Val End",
-            "Model Used",
-            "A2C Sharpe",
-            "PPO Sharpe",
-            "DDPG Sharpe",
-        ]
+agent = DRLAgent(df=processed,
+                 train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
+                 val_test_period=(TEST_START_DATE,TEST_END_DATE),
+                 use_pretrain=False,
+                 pretrain_pth="/mnt/trained_models",
+                 best_model="ppo",
+                 **env_kwargs)
 
-        return df_summary
+status = agent.run_strategy(A2C_model_kwargs,
+                             PPO_model_kwargs,
+                             DDPG_model_kwargs,
+                             timesteps_dict)
 
-if __name__=="__main__":    
-
-    agent = DRLAgentv(df=processed,
-                    train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
-                    val_test_period=(TEST_START_DATE,TEST_END_DATE),
-                    rebalance_window=rebalance_window, 
-                    validation_window=validation_window,
-                    use_pretrain=False,
-                    pretrain_pth="/mnt/trained_models",                   
-                    **env_kwargs)
-                    
-    df_summary = ensemble_agent.run_ensemble_strategy(A2C_model_kwargs,
-                                                    PPO_model_kwargs,
-                                                    DDPG_model_kwargs,
-                                                    timesteps_dict)
-    print(f"Best Sharpe Lists is ")
-    print(ensemble_agent.best_sharpes)
-    print(df_summary)
+print(f"Training finished successfully {status} with validation sharpe {agent.sharpe} ")
