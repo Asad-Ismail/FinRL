@@ -619,7 +619,7 @@ DDPG_model_kwargs = {
                     }
 
 timesteps_dict = {'a2c' : 10_0000, 
-                 'ppo' : 1e7, 
+                 'ppo' : 10000_0000, 
                  'ddpg' : 10_0000
                  }
 
@@ -664,14 +664,13 @@ class DRLAgent:
         for i in range(30):
         #model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name="PPO")
         #model.save(f"{models_dir}/{TIMESTEPS*i}")
+            print(f"Running Epoch {i}")
             model = model.learn(
                 total_timesteps=total_timesteps,
                 tb_log_name=tb_log_name,
                 callback=TensorboardCallback(),
-                progress_bar=True
-            )
-            model.save(
-                f"{TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps*i // 1000}k")
+                progress_bar=True)
+            model.save(f"{TRAINED_MODEL_DIR}/{model_name.upper()}_{total_timesteps*i // 1000}k")
         return model
 
     @staticmethod
