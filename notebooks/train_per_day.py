@@ -619,7 +619,7 @@ DDPG_model_kwargs = {
                     }
 
 timesteps_dict = {'a2c' : 10_0000, 
-                 'ppo' : 10000_0000, 
+                 'ppo' : 100_000, 
                  'ddpg' : 10_0000
                  }
 
