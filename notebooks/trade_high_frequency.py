@@ -7,6 +7,10 @@ import pandas as pd
 import numpy as np
 import torch
 import gym
+from finrl.config_tickers import DOW_30_TICKER
+from finrl.meta.data_processor import DataProcessor
+from finrl.config import INDICATORS
+from finrl.config import RLlib_PARAMS
 
 class AlpacaPaperTrading():
 
@@ -332,6 +336,12 @@ API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
 API_BASE_URL = 'https://paper-api.alpaca.markets'
 data_url = 'wss://data.alpaca.markets'
 
+
+ERL_PARAMS = {"learning_rate": 3e-6,"batch_size": 2048,"gamma":  0.985,
+        "seed":312,"net_dimension":[128,64], "target_step":5000, "eval_gap":30,
+        "eval_times":1} 
+
+action_dim = len(DOW_30_TICKER)
 state_dim = 1 + 2 + 3 * action_dim + len(INDICATORS) * action_dim
 
 paper_trading_erl = AlpacaPaperTrading(ticker_list = DOW_30_TICKER, 
