@@ -11,6 +11,7 @@ from finrl.config_tickers import DOW_30_TICKER
 from finrl.meta.data_processor import DataProcessor
 from finrl.config import INDICATORS
 from finrl.config import RLlib_PARAMS
+from train_high_frequency import ActorPPO
 
 class AlpacaPaperTrading():
 
