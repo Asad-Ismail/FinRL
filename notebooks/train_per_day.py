@@ -1056,4 +1056,4 @@ status = agent.run_strategy(A2C_model_kwargs,
                              DDPG_model_kwargs,
                              timesteps_dict)
 
-print(f"Training finished successfully {status} with validation sharpe {agent.sharpe} ")
+print(f"Training finished successfully {status} with validation sharpe {agent.sharpe}")

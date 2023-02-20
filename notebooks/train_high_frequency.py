@@ -530,7 +530,7 @@ class DRLAgent:
         episode_total_assets = [environment.initial_total_asset]
         with _torch.no_grad():
             for i in range(environment.max_step):
-                s_tensor = _torch.as_tensor((state,), device=device)
+                s_tensor = torch.as_tensor((state,), device=device)
                 a_tensor = act(s_tensor)  # action_tanh = act.forward()
                 action = (
                     a_tensor.detach().cpu().numpy()[0]
@@ -574,18 +574,21 @@ def train(
     dp = DataProcessor(data_source, **kwargs)
     ## Read preprocessed data from pickle file
     if use_preprocess:
+        dp.processor.start=start_date
+        dp.processor.end=end_date
+        dp.processor.time_interval=time_interval
         data = pd.read_pickle("clean_data.pkl")
         print(f"Loaded preprocessed data with shape {data.shape}")
     else:
         data = dp.download_data(ticker_list, start_date, end_date, time_interval)
         data = dp.clean_data(data)
         data = dp.add_technical_indicator(data, technical_indicator_list)
-    if if_vix:
-        print(f"Adding Vix Indicator to Data {data.shape}")
-        data = dp.add_vix(data)
-    else:
-        print(f"Adding Turbulance Indicator to Data {data.shape}")
-        data = dp.add_turbulence(data)
+        if if_vix:
+            print(f"Adding Vix Indicator to Data {data.shape}")
+            data = dp.add_vix(data)
+        else:
+            print(f"Adding Turbulance Indicator to Data {data.shape}")
+            data = dp.add_turbulence(data)
     print(f"Getting Numpy arrays from data!")
     price_array, tech_array, turbulence_array = dp.df_to_array(data, if_vix)
     env_config = {
@@ -672,8 +675,14 @@ action_dim = len(DOW_30_TICKER)
 state_dim = 1 + 2 + 3 * action_dim + len(INDICATORS) * action_dim
 
 
-train(start_date = '2020-08-25', 
-      end_date = '2023-02-10',
+API_KEY = "PKQ6Y2WHFM3CZWU88SVS"
+API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
+API_BASE_URL = 'https://paper-api.alpaca.markets'
+data_url = 'wss://data.alpaca.markets'
+env = StockTradingEnv
+
+train(start_date = '2022-12-01', 
+      end_date = '2023-02-19',
       ticker_list = ticker_list, 
       data_source = 'alpaca',
       time_interval= '15Min', 
@@ -686,5 +695,6 @@ train(start_date = '2020-08-25',
       API_SECRET = API_SECRET, 
       API_BASE_URL = API_BASE_URL,
       erl_params=ERL_PARAMS,
-      cwd='./papertrading_erl_retrain',
+      cwd='./papertrading_erl',
+      use_preprocess=False,
       break_step=1e7)
