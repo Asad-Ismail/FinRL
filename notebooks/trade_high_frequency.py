@@ -204,8 +204,9 @@ class AlpacaPaperTrading():
         self.stocks_cd += 1
         print(f"Action shape is {action.shape}")
         print(f"Action min and max is {action.min(), action.max()}")
+        exit()
         if self.turbulence_bool == 0:
-            min_action = 10  # stock_cd
+            min_action = 1  # stock_cd
             for index in np.where(action < -min_action)[0]:  # sell_index:
                 sell_num_shares = min(self.stocks[index], -action[index])
                 qty =  abs(int(sell_num_shares))
