@@ -679,6 +679,10 @@ API_KEY = "PKQ6Y2WHFM3CZWU88SVS"
 API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
 API_BASE_URL = 'https://paper-api.alpaca.markets'
 data_url = 'wss://data.alpaca.markets'
+
+ERL_PARAMS = {"learning_rate": 3e-6,"batch_size": 2048,"gamma":  0.985,
+        "seed":312,"net_dimension":[128,64], "target_step":5000, "eval_gap":30,
+        "eval_times":1} 
 env = StockTradingEnv
 
 train(start_date = '2022-12-01', 
