@@ -11,7 +11,7 @@ from finrl.config_tickers import DOW_30_TICKER
 from finrl.meta.data_processor import DataProcessor
 from finrl.config import INDICATORS
 from finrl.config import RLlib_PARAMS
-from train_high_frequency import ActorPPO
+from train_high_frequency import ActorPPO,AgentPPO
 
 class AlpacaPaperTrading():
 
@@ -350,7 +350,7 @@ paper_trading_erl = AlpacaPaperTrading(ticker_list = DOW_30_TICKER,
                                        time_interval = '15Min', 
                                        drl_lib = 'elegantrl', 
                                        agent = 'ppo', 
-                                       cwd = './papertrading_erl_retrain', 
+                                       cwd = './papertrading_erl', 
                                        net_dim = ERL_PARAMS['net_dimension'], 
                                        state_dim = state_dim, 
                                        action_dim= action_dim, 
