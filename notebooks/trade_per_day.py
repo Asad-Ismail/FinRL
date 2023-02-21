@@ -1,3 +1,4 @@
+
 import datetime
 import threading
 from finrl.meta.data_processors.processor_alpaca import AlpacaProcessor
@@ -12,6 +13,7 @@ from finrl.meta.data_processor import DataProcessor
 from finrl.config import INDICATORS
 from finrl.config import RLlib_PARAMS
 from train_high_frequency import ActorPPO,AgentPPO
+from finrl.meta.preprocessor.preprocessors import FeatureEngineer
 
 class AlpacaPaperTrading():
 
@@ -59,6 +61,7 @@ class AlpacaPaperTrading():
                 
                 try:
                     #load agent
+                    print(f"Using Stable baselines PPO")
                     self.model = PPO.load(cwd)
                     print("Successfully load model", cwd)
                 except:
@@ -313,54 +316,82 @@ class AlpacaPaperTrading():
             return 1 / (1 + np.exp(-x * np.e)) - 0.5
 
         return sigmoid(ary / thresh) * thresh
-    
-class StockEnvEmpty(gym.Env):
-    #Empty Env used for loading rllib agent
-    def __init__(self,config):
-      state_dim = config['state_dim']
-      action_dim = config['action_dim']
-      self.env_num = 1
-      self.max_step = 10000
-      self.env_name = 'StockEnvEmpty'
-      self.state_dim = state_dim  
-      self.action_dim = action_dim
-      self.if_discrete = False  
-      self.target_return = 9999
-      self.observation_space = gym.spaces.Box(low=-3000, high=3000, shape=(state_dim,), dtype=np.float32)
-      self.action_space = gym.spaces.Box(low=-1, high=1, shape=(action_dim,), dtype=np.float32)
-        
-    def reset(self):
-        return 
 
-    def step(self, actions):
-        return
+trained_ticks=['AAPL',
+  'AMGN',
+  'AXP',
+  'BA',
+  'CAT',
+  'CRM',
+  'CSCO',
+  'CVX',
+  'DIS',
+  'GS',
+  'HD',
+  'HON',
+  'IBM',
+  'INTC',
+  'JNJ',
+  'JPM',
+  'KO',
+  'MCD',
+  'MMM',
+  'MRK',
+  'MSFT',
+  'NKE',
+  'PG',
+  'TRV',
+  'UNH',
+  'VZ',
+  'WBA',
+  'WMT']
+
+stock_dimension = len(trained_ticks)
+state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension
 
 
-API_KEY = "PKQ6Y2WHFM3CZWU88SVS"
-API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
-API_BASE_URL = 'https://paper-api.alpaca.markets'
-data_url = 'wss://data.alpaca.markets'
+from datetime import datetime, timedelta
+
+def get_nth_previous_date(n):
+    today = datetime.today()
+    nth_previous_date = today - timedelta(days=n)
+    return nth_previous_date.strftime('%Y-%m-%d')
+
+START_DATE = get_nth_previous_date(1)
+# Test date is something unreachable in this lifetime
+END_DATE = '2080-02-16'
 
 
-ERL_PARAMS = {"learning_rate": 3e-6,"batch_size": 2048,"gamma":  0.985,
-        "seed":312,"net_dimension":[128,64], "target_step":5000, "eval_gap":30,
-        "eval_times":1} 
 
-action_dim = len(DOW_30_TICKER)
-state_dim = 1 + 2 + 3 * action_dim + len(INDICATORS) * action_dim
+df = YahooDownloader(start_date = START_DATE,
+                     end_date = END_DATE,
+                     ticker_list = trained_ticks).fetch_data()
 
-paper_trading_erl = AlpacaPaperTrading(ticker_list = DOW_30_TICKER, 
-                                       time_interval = '1Min', 
-                                       drl_lib = 'elegantrl', 
-                                       agent = 'ppo', 
-                                       cwd = './papertrading_erl', 
-                                       net_dim = ERL_PARAMS['net_dimension'], 
-                                       state_dim = state_dim, 
-                                       action_dim= action_dim, 
-                                       API_KEY = API_KEY, 
-                                       API_SECRET = API_SECRET, 
-                                       API_BASE_URL = API_BASE_URL, 
-                                       tech_indicator_list = INDICATORS, 
-                                       turbulence_thresh=30, 
-                                       max_stock=1)
-paper_trading_erl.run()
+
+fe = FeatureEngineer(use_technical_indicator=True,
+                     tech_indicator_list = INDICATORS,
+                     use_turbulence=True,
+                     user_defined_feature = False)
+
+processed = fe.preprocess_data(df)
+processed = processed.copy()
+processed = processed.fillna(0)
+processed = processed.replace(np.inf,0)
+
+print(f"Processed Features  are {processed}")
+print(f"Processed Fetatures shape are {processed.shape}")
+
+paper_trading_erl = AlpacaPaperTrading(ticker_list = trained_ticks, 
+                                      time_interval = '1Min', 
+                                      drl_lib = 'stable_baselines3', 
+                                      agent = 'ppo', 
+                                      cwd = './papertrading_erl', 
+                                      net_dim = ERL_PARAMS['net_dimension'], 
+                                      state_dim = state_dim, 
+                                      action_dim= action_dim, 
+                                      API_KEY = API_KEY, 
+                                      API_SECRET = API_SECRET, 
+                                      API_BASE_URL = API_BASE_URL, 
+                                      tech_indicator_list = INDICATORS, 
+                                      turbulence_thresh=30, 
+                                      max_stock=1)
