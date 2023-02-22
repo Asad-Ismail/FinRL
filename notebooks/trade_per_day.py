@@ -302,7 +302,6 @@ class AlpacaPaperTrading():
         self.price = price
 
         print(f"The value of cash: {cash}, stocks are: {self.price}, turbulace is {self.turbulence_bool}")
-
         state_space = 1 + 2*self.stock_dim+ len(self.tech_indicator_list)*self.stock_dim
 
         trade_env = DummyVecEnv(
