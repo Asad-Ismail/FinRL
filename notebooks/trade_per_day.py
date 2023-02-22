@@ -13,12 +13,23 @@ from finrl.meta.data_processor import DataProcessor
 from finrl.config import INDICATORS
 from finrl.config import RLlib_PARAMS
 from train_high_frequency import ActorPPO,AgentPPO
-from finrl.meta.preprocessor.preprocessors import FeatureEngineer
+from finrl.meta.preprocessor.preprocessors import FeatureEngineer,data_split
+from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
+from finrl.meta.env_stock_trading.env_stocktrading import *
+import warnings
+from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
+
+
+# Ignore all future warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
+
 
 class AlpacaPaperTrading():
 
-    def __init__(self,ticker_list, time_interval, drl_lib, agent, cwd, net_dim, 
-                 state_dim, action_dim, API_KEY, API_SECRET, 
+    def __init__(self,df,ticker_list, time_interval, drl_lib, agent, cwd,
+                 stock_dim, action_dim, API_KEY, API_SECRET, 
                  API_BASE_URL, tech_indicator_list, turbulence_thresh=30, 
                  max_stock=1e2, latency = None):
         #load agent
@@ -101,6 +112,7 @@ class AlpacaPaperTrading():
         self.max_stock = max_stock 
         
         #initialize account
+        self.trade_data=df
         self.stocks = np.asarray([0] * len(ticker_list)) #stocks holding
         self.stocks_cd = np.zeros_like(self.stocks) 
         self.cash = None #cash record 
@@ -110,6 +122,11 @@ class AlpacaPaperTrading():
         self.stockUniverse = ticker_list
         self.turbulence_bool = 0
         self.equities = []
+        self.stock_dim = stock_dim
+        self.action_space=action_dim
+        self.buy_cost_pct=0.01
+        self.sell_cost_pct=0.01
+        self.reward_scaling=1e-4
         
     def test_latency(self, test_times = 10): 
         total_time = 0
@@ -228,6 +245,7 @@ class AlpacaPaperTrading():
                 else:
                     tmp_cash = self.cash
                 buy_num_shares = min(tmp_cash // self.price[index], abs(int(action[index])))
+                print(f"Trying to Buy {abs(int(action[index]))} Available cash is {tmp_cash},The stock price is {self.price[index]} " )
                 if (buy_num_shares != buy_num_shares): # if buy_num_change = nan
                     qty = 0 # set to 0 quantity
                 else:
@@ -257,6 +275,7 @@ class AlpacaPaperTrading():
             
     
     def get_state(self):
+
         alpaca = AlpacaProcessor(api=self.alpaca)
         price, tech, turbulence = alpaca.fetch_latest_data(ticker_list = self.stockUniverse, time_interval='1Min',
                                                      tech_indicator_list=self.tech_indicator_list)
@@ -271,31 +290,46 @@ class AlpacaPaperTrading():
             ind = self.stockUniverse.index(position.symbol)
             stocks[ind] = ( abs(int(float(position.qty))))
         
-        stocks = np.asarray(stocks, dtype = float)
+        #stocks = np.asarray(stocks, dtype = float)
         cash = float(self.alpaca.get_account().cash)
+
+
         self.cash = cash
         self.stocks = stocks
         self.turbulence_bool = turbulence_bool 
         self.price = price
 
         print(f"The value of cash: {cash}, stocks are: {self.price}, turbulace is {self.turbulence_bool}")
-        
-        
-        
-        amount = np.array(self.cash * (2 ** -12), dtype=np.float32)
-        scale = np.array(2 ** -6, dtype=np.float32)
-        state = np.hstack((amount,
-                    turbulence,
-                    self.turbulence_bool,
-                    price * scale,
-                    self.stocks * scale,
-                    self.stocks_cd,
-                    tech,
-                    )).astype(np.float32)
-        state[np.isnan(state)] = 0.0
-        state[np.isinf(state)] = 0.0
-        print(len(self.stockUniverse))
-        return state
+
+        state_space = 1 + 2*self.stock_dim+ len(self.tech_indicator_list)*self.stock_dim
+
+        trade_env = DummyVecEnv(
+            [
+                lambda: StockTradingEnv(
+                    df=self.trade_data,
+                    stock_dim=self.stock_dim,
+                    hmax=self.max_stock,
+                    initial_amount=self.cash,
+                    num_stock_shares=stocks,
+                    buy_cost_pct=[self.buy_cost_pct] * self.stock_dim,
+                    sell_cost_pct=[self.sell_cost_pct] * self.stock_dim,
+                    reward_scaling=self.reward_scaling,
+                    state_space=state_space,
+                    action_space=self.action_space,
+                    tech_indicator_list=self.tech_indicator_list,
+                    turbulence_threshold=self.turbulence_thresh,
+                    initial=True,
+                    previous_state=[],
+                    model_name="ppo",
+                    mode="trade",
+                    print_verbosity=1,
+                )
+            ]
+        )
+
+        trade_obs = trade_env.reset()
+
+        return trade_obs
         
     def submitOrder(self, qty, stock, side, resp):
         if(qty > 0):
@@ -346,8 +380,8 @@ trained_ticks=['AAPL',
   'WBA',
   'WMT']
 
-stock_dimension = len(trained_ticks)
-state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension
+stock_dim = len(trained_ticks)
+state_space = 1 + 2*stock_dim + len(INDICATORS)*stock_dim
 
 
 from datetime import datetime, timedelta
@@ -357,9 +391,17 @@ def get_nth_previous_date(n):
     nth_previous_date = today - timedelta(days=n)
     return nth_previous_date.strftime('%Y-%m-%d')
 
-START_DATE = get_nth_previous_date(1)
+API_KEY = "PKQ6Y2WHFM3CZWU88SVS"
+API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
+API_BASE_URL = 'https://paper-api.alpaca.markets'
+data_url = 'wss://data.alpaca.markets'
+
+#START_DATE = get_nth_previous_date(4)
+START_DATE= '2022-01-01'
 # Test date is something unreachable in this lifetime
 END_DATE = '2080-02-16'
+
+print(f"Start and end Date is {START_DATE}, {END_DATE}")
 
 
 
@@ -367,6 +409,7 @@ df = YahooDownloader(start_date = START_DATE,
                      end_date = END_DATE,
                      ticker_list = trained_ticks).fetch_data()
 
+print(f"Initial DF shape is {df.shape}")
 
 fe = FeatureEngineer(use_technical_indicator=True,
                      tech_indicator_list = INDICATORS,
@@ -378,17 +421,25 @@ processed = processed.copy()
 processed = processed.fillna(0)
 processed = processed.replace(np.inf,0)
 
-print(f"Processed Features  are {processed}")
-print(f"Processed Fetatures shape are {processed.shape}")
+print(f"Tail is ")
+print(processed.tail())
 
-paper_trading_erl = AlpacaPaperTrading(ticker_list = trained_ticks, 
+
+specific_date=df["date"].unique()[-1]
+print(f"Specific date is {specific_date}")
+# Data split is necessary since it will label all the stocks with same day with same data frame index
+processed = data_split(processed,start=specific_date,end=END_DATE,)
+print(f"Final DF is {processed.shape}")
+assert processed.shape[0]==len(trained_ticks)
+
+paper_trading_erl = AlpacaPaperTrading(df=processed,
+                                      ticker_list = trained_ticks, 
                                       time_interval = '1Min', 
                                       drl_lib = 'stable_baselines3', 
                                       agent = 'ppo', 
-                                      cwd = './papertrading_erl', 
-                                      net_dim = ERL_PARAMS['net_dimension'], 
-                                      state_dim = state_dim, 
-                                      action_dim= action_dim, 
+                                      cwd = './best_trained_model/PPO_2600k.zip', 
+                                      stock_dim = stock_dim, 
+                                      action_dim= stock_dim, 
                                       API_KEY = API_KEY, 
                                       API_SECRET = API_SECRET, 
                                       API_BASE_URL = API_BASE_URL, 

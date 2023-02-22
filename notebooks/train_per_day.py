@@ -35,6 +35,10 @@ from finrl.meta.env_stock_trading.env_stocktrading import *
 import random
 from datetime import datetime, timedelta
 from finrl.agents.stablebaselines3.models import *
+import warnings
+# Ignore all future warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
 
 TRAINED_MODEL_DIR="best_trained_model"
 check_and_make_directories([DATA_SAVE_DIR, TRAINED_MODEL_DIR, TENSORBOARD_LOG_DIR, RESULTS_DIR])
@@ -581,9 +585,13 @@ processed = processed.copy()
 processed = processed.fillna(0)
 processed = processed.replace(np.inf,0)
 
+#print(f"Tail is {processed.tail()}")
+#print(f"Tail index is {processed.tail().index}")
+
+
 stock_dimension = len(processed.tic.unique())
 state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension
-print(f"Stock Dimension: {stock_dimension}, State Space: {state_space}")
+#print(f"Stock Dimension: {stock_dimension}, State Space: {state_space}")
 
 env_kwargs = {
     "hmax": 1, 
@@ -1043,17 +1051,18 @@ class DRLAgent:
         ## Assign the model as final model
         return True
 
-agent = DRLAgent(df=processed,
-                 train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
-                 val_test_period=(TEST_START_DATE,TEST_END_DATE),
-                 use_pretrain=False,
-                 pretrain_pth="/mnt/trained_models",
-                 best_model="ppo",
-                 **env_kwargs)
+if __name__=="__main__":
+    agent = DRLAgent(df=processed,
+                    train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
+                    val_test_period=(TEST_START_DATE,TEST_END_DATE),
+                    use_pretrain=False,
+                    pretrain_pth="/mnt/trained_models",
+                    best_model="ppo",
+                    **env_kwargs)
 
-status = agent.run_strategy(A2C_model_kwargs,
-                             PPO_model_kwargs,
-                             DDPG_model_kwargs,
-                             timesteps_dict)
+    status = agent.run_strategy(A2C_model_kwargs,
+                                PPO_model_kwargs,
+                                DDPG_model_kwargs,
+                                timesteps_dict)
 
-print(f"Training finished successfully {status} with validation sharpe {agent.sharpe}")
+    print(f"Training finished successfully {status} with validation sharpe {agent.sharpe}")
