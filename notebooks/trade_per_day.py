@@ -18,6 +18,7 @@ from finrl.meta.preprocessor.yahoodownloader import YahooDownloader
 from finrl.meta.env_stock_trading.env_stocktrading import *
 import warnings
 from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
+from datetime import timedelta
 
 
 # Ignore all future warnings
@@ -218,6 +219,7 @@ class AlpacaPaperTrading():
         
         elif self.drl_lib == 'stable_baselines3':
             action = self.model.predict(state)[0]
+            action=action.squeeze(0)
             
         else:
             raise ValueError('The DRL library input is NOT supported yet. Please check your input.')
@@ -225,7 +227,7 @@ class AlpacaPaperTrading():
         self.stocks_cd += 1
         print(f"Action shape is {action.shape}")
         print(f"Action min and max is {action.min(), action.max()}")
-        #exit()
+        exit()
         #return
         if self.turbulence_bool == 0:
             min_action = 0  # stock_cd
@@ -384,7 +386,7 @@ stock_dim = len(trained_ticks)
 state_space = 1 + 2*stock_dim + len(INDICATORS)*stock_dim
 
 
-from datetime import datetime, timedelta
+#from datetime import datetime, timedelta
 
 def get_nth_previous_date(n):
     today = datetime.today()
