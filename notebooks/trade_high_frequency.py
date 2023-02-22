@@ -225,6 +225,7 @@ class AlpacaPaperTrading():
                 else:
                     tmp_cash = self.cash
                 buy_num_shares = min(tmp_cash // self.price[index], abs(int(action[index])))
+                print(f"Trying to Buy {abs(int(action[index]))} Available cash is {tmp_cash},The stock price is {self.price[index]} " )
                 if (buy_num_shares != buy_num_shares): # if buy_num_change = nan
                     qty = 0 # set to 0 quantity
                 else:
