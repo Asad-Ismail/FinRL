@@ -442,3 +442,5 @@ paper_trading_erl = AlpacaPaperTrading(df=processed,
                                       tech_indicator_list = INDICATORS, 
                                       turbulence_thresh=30, 
                                       max_stock=1)
+print(f"Running Trading!!")
+paper_trading_erl.run()
