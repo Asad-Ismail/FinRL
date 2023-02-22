@@ -337,8 +337,8 @@ class StockEnvEmpty(gym.Env):
         return
 
 
-API_KEY = "PKQ6Y2WHFM3CZWU88SVS"
-API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
+API_KEY = "PKFHY1CXFUGZAG2PGYRT"
+API_SECRET = "I6BYnlAk7AVL3Ry141OEQmsjPjgwPtdPjTcpJkfB"
 API_BASE_URL = 'https://paper-api.alpaca.markets'
 data_url = 'wss://data.alpaca.markets'
 

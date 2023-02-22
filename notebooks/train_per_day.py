@@ -725,7 +725,7 @@ class DRLAgent:
         use_pretrain=False,
         pretrain_pth="",
         best_model="ppo",
-        reset_interval=60
+        reset_interval=30
         
     ):
         self.df = df
@@ -882,7 +882,7 @@ class DRLAgent:
         ############## Environment Setup starts ##############
         ## training env
         train = data_split(self.df,start=self.train_period[0],end=self.train_period[1],)
-        stday = random.randint(0,len(train.index.unique())-(self.reset_interval*self.stock_dim)-2)
+        stday = random.randint(0,len(train.index.unique())-(self.reset_interval)-1)
         self.train_env = DummyVecEnv(
             [
                 lambda: StockTradingEnv2(
@@ -1052,8 +1052,8 @@ if __name__=="__main__":
     agent = DRLAgent(df=processed,
                     train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
                     val_test_period=(TEST_START_DATE,TEST_END_DATE),
-                    use_pretrain=False,
-                    pretrain_pth="/mnt/trained_models",
+                    use_pretrain=True,
+                    pretrain_pth="./best_trained_models/PPO_2600k.zip",
                     best_model="ppo",
                     **env_kwargs)
 

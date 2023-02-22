@@ -226,8 +226,9 @@ class AlpacaPaperTrading():
         
         self.stocks_cd += 1
         print(f"Action shape is {action.shape}")
+        print(f"Actions are {action}")
         print(f"Action min and max is {action.min(), action.max()}")
-        exit()
+        #exit()
         #return
         if self.turbulence_bool == 0:
             min_action = 0  # stock_cd
@@ -392,8 +393,8 @@ def get_nth_previous_date(n):
     nth_previous_date = today - timedelta(days=n)
     return nth_previous_date.strftime('%Y-%m-%d')
 
-API_KEY = "PKQ6Y2WHFM3CZWU88SVS"
-API_SECRET = "DRjZl2fpiqfmSrDHj7hejIpU94FQXgUWUdxccl0d"
+API_KEY = "PKFHY1CXFUGZAG2PGYRT"
+API_SECRET = "I6BYnlAk7AVL3Ry141OEQmsjPjgwPtdPjTcpJkfB"
 API_BASE_URL = 'https://paper-api.alpaca.markets'
 data_url = 'wss://data.alpaca.markets'
 

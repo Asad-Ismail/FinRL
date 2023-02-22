@@ -62,8 +62,6 @@ class StockTradingEnv(gym.Env):
             low=-np.inf, high=np.inf, shape=(self.state_space,)
         )
         self.data = self.df.loc[self.day, :]
-        print("ff")
-        print(self.data)
         self.terminal = False
         self.make_plots = make_plots
         self.print_verbosity = print_verbosity
