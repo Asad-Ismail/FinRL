@@ -421,10 +421,6 @@ processed = processed.copy()
 processed = processed.fillna(0)
 processed = processed.replace(np.inf,0)
 
-print(f"Tail is ")
-print(processed.tail())
-
-
 specific_date=df["date"].unique()[-1]
 print(f"Specific date is {specific_date}")
 # Data split is necessary since it will label all the stocks with same day with same data frame index

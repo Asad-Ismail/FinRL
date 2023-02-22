@@ -99,8 +99,7 @@ class StockTradingEnv2(gym.Env):
         self.mode = mode
         self.iteration = iteration
         self.random_day=random_day
-        # Since there are stock dim rows for each day 
-        self.reset_day=reset_interval*self.stock_dim
+        self.reset_day=reset_interval
         self.reset_interval=reset_interval
         # initalize state
         self.state = self._initiate_state()
@@ -378,9 +377,9 @@ class StockTradingEnv2(gym.Env):
             
         ## Choose a random day for start of trading    
         if self.random_day:
-            self.day = random.randint(0,len(self.df.index.unique())-self.reset_interval*self.stock_dim-2)
+            self.day = random.randint(0,len(self.df.index.unique())-self.reset_interval-1)
             if self.reset_day:
-                self.reset_day=self.day+self.reset_interval*self.stock_dim
+                self.reset_day=self.day+self.reset_interval
         else:
             self.day = 0
             
@@ -524,9 +523,7 @@ class StockTradingEnv2(gym.Env):
     def save_asset_memory(self):
         date_list = self.date_memory
         asset_list = self.asset_memory
-        df_account_value = pd.DataFrame(
-            {"date": date_list, "account_value": asset_list}
-        )
+        df_account_value = pd.DataFrame({"date": date_list, "account_value": asset_list})
         return df_account_value
 
     def save_action_memory(self):
