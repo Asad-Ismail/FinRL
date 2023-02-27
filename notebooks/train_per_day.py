@@ -566,7 +566,7 @@ TRAIN_END_DATE
 
 TRAIN_START_DATE = '2005-04-01'
 # Test date is something unreachable in this lifetime
-TEST_END_DATE = '2080-02-16'
+TEST_END_DATE = '2080-02-21'
 df = YahooDownloader(start_date = TRAIN_START_DATE,
                      end_date = TEST_END_DATE,
                      ticker_list = DOW_30_TICKER).fetch_data()
@@ -624,7 +624,7 @@ DDPG_model_kwargs = {
                     }
 
 timesteps_dict = {'a2c' : 10_0000, 
-                 'ppo' : 100_000, 
+                 'ppo' : 10_0000, 
                  'ddpg' : 10_0000
                  }
 
@@ -670,7 +670,7 @@ class DRLAgent:
         #model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name="PPO")
         #model.save(f"{models_dir}/{TIMESTEPS*i}")
             print(f"Running Epoch {i}")
-            model = model.learn(
+            model.learn(
                 total_timesteps=total_timesteps,
                 tb_log_name=tb_log_name,
                 callback=TensorboardCallback(),
@@ -1052,8 +1052,8 @@ if __name__=="__main__":
     agent = DRLAgent(df=processed,
                     train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
                     val_test_period=(TEST_START_DATE,TEST_END_DATE),
-                    use_pretrain=True,
-                    pretrain_pth="./best_trained_models/PPO_2600k.zip",
+                    use_pretrain=False,
+                    pretrain_pth="./best_trained_model/",
                     best_model="ppo",
                     **env_kwargs)
 

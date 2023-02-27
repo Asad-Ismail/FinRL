@@ -8,8 +8,6 @@ from finrl.plot import backtest_stats, backtest_plot, get_daily_return, get_base
 
 import numpy as np
 import pandas as pd
-
-
 import os
 import time
 import gym
@@ -577,7 +575,8 @@ def train(
         dp.processor.start=start_date
         dp.processor.end=end_date
         dp.processor.time_interval=time_interval
-        data = pd.read_pickle("clean_data.pkl")
+        dp.tech_indicator_list=technical_indicator_list
+        data = pd.read_pickle("clean_data_vix.pkl")
         print(f"Loaded preprocessed data with shape {data.shape}")
     else:
         data = dp.download_data(ticker_list, start_date, end_date, time_interval)
@@ -701,5 +700,5 @@ if __name__== "__main__":
         API_BASE_URL = API_BASE_URL,
         erl_params=ERL_PARAMS,
         cwd='./papertrading_erl',
-        use_preprocess=False,
-        break_step=1e7)
+        use_preprocess=True,
+        break_step=1e8)

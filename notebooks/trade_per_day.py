@@ -191,6 +191,8 @@ class AlpacaPaperTrading():
             last_equity = float(self.alpaca.get_account().last_equity)
             cur_time = time.time()
             self.equities.append([cur_time,last_equity])
+            # Break if we are done with trading for today
+            break
             time.sleep(self.time_interval)
             
     def awaitMarketOpen(self):
@@ -432,10 +434,10 @@ assert processed.shape[0]==len(trained_ticks)
 
 paper_trading_erl = AlpacaPaperTrading(df=processed,
                                       ticker_list = trained_ticks, 
-                                      time_interval = '1Min', 
+                                      time_interval = '15Min', 
                                       drl_lib = 'stable_baselines3', 
                                       agent = 'ppo', 
-                                      cwd = './best_trained_model/PPO_2600k.zip', 
+                                      cwd = './best_trained_model/PPO_900k.zip', 
                                       stock_dim = stock_dim, 
                                       action_dim= stock_dim, 
                                       API_KEY = API_KEY, 
