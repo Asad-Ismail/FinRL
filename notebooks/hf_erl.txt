@@ -1,0 +1,16 @@
+All Imported successfully!!
+Alpaca successfully connected
+(23968830, 16)
+Loaded preprocessed data with shape (23968830, 16)
+Getting Numpy arrays from data!
+| Arguments Remove cwd: ./erl_trading
+| Evaluator:
+| `step`: Number of samples, or total training steps, or running times of `env.step()`.
+| `time`: Time spent from the start of training to this moment.
+| `avgR`: Average value of cumulative rewards, which is the sum of rewards in an episode.
+| `stdR`: Standard dev of cumulative rewards, which is the sum of rewards in an episode.
+| `avgS`: Average of steps in an episode.
+| `objC`: Objective of Critic network. Or call it loss function of critic network.
+| `objA`: Objective of Actor network. It is the average Q value of the critic network.
+|     step      time  |     avgR    stdR    avgS  |     objC      objA
+| 2.00e+04        87  |    -0.73    0.02   12345  |     0.00      0.15

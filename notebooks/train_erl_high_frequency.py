@@ -188,7 +188,7 @@ API_BASE_URL = 'https://paper-api.alpaca.markets'
 data_url = 'wss://data.alpaca.markets'
 
 ERL_PARAMS = {"learning_rate": 3e-6,"batch_size": 2048,"gamma":  0.985,
-        "seed":312,"net_dimension":[128,64], "target_step":5000, "eval_gap":2000,
+        "seed":312,"net_dimension":[128,64], "target_step":5000, "eval_gap":1e6,
         "eval_times":8} 
 
 env = StockTradingEnv
@@ -211,4 +211,4 @@ if __name__== "__main__":
     erl_params=ERL_PARAMS,
     cwd='./erl_trading',
     use_preprocess=True,
-    break_step=1e8)
+    break_step=1e15)
