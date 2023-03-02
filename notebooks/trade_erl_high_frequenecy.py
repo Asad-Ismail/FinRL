@@ -386,7 +386,7 @@ action_dim = len(DOW_30_TICKER)
 state_dim = 1 + 2 + 3 * action_dim + len(INDICATORS) * action_dim
 
 paper_trading_erl = AlpacaPaperTrading(ticker_list = DOW_30_TICKER, 
-                                       time_interval = '15Min', 
+                                       time_interval = '1Min', 
                                        drl_lib = 'elegantrl', 
                                        agent = 'ppo', 
                                        cwd = './erl_trading', 

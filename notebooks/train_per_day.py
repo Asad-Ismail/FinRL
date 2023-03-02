@@ -592,7 +592,7 @@ state_space = 1 + 2*stock_dimension + len(INDICATORS)*stock_dimension
 
 env_kwargs = {
     "hmax": 1, 
-    "initial_amount": 200, 
+    "initial_amount": 500, 
     "buy_cost_pct": 0.01, 
     "sell_cost_pct": 0.01, 
     "state_space": state_space, 
@@ -624,7 +624,7 @@ DDPG_model_kwargs = {
                     }
 
 timesteps_dict = {'a2c' : 10_0000, 
-                 'ppo' : 10_0000, 
+                 'ppo' : 10_00000, 
                  'ddpg' : 10_0000
                  }
 
@@ -666,7 +666,7 @@ class DRLAgent:
     @staticmethod
     def train_model(model, model_name, tb_log_name, iter_num, total_timesteps=5000):
         print(f"Training model for total timestamps of {total_timesteps}")
-        for i in range(30):
+        for i in range(500):
         #model.learn(total_timesteps=TIMESTEPS, reset_num_timesteps=False, tb_log_name="PPO")
         #model.save(f"{models_dir}/{TIMESTEPS*i}")
             print(f"Running Epoch {i}")
@@ -1052,7 +1052,7 @@ if __name__=="__main__":
     agent = DRLAgent(df=processed,
                     train_period=(TRAIN_START_DATE,TRAIN_END_DATE),
                     val_test_period=(TEST_START_DATE,TEST_END_DATE),
-                    use_pretrain=False,
+                    use_pretrain=True,
                     pretrain_pth="./best_trained_model/",
                     best_model="ppo",
                     **env_kwargs)

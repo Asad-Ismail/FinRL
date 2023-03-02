@@ -1,0 +1,5 @@
+wrds
+swig
+FinRL/
+numpy==1.20.3
+stable-baselines3[extra]

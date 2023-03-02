@@ -1,0 +1,2890 @@
+| load actor from: ./erl_trading/actor.pth
+Waiting for market to open...
+Market opened.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 0)
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (0, 1)
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 25.21 
+Order of | 1 JPM buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 HD sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MMM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 218.52 
+Quantity is 0, order of | 0 WBA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+The value of cash: 56.7, stocks are: [144.75   235.005  174.01   205.31   249.38   193.8     48.35   162.61
+  97.8347  58.045  346.065  291.17   193.49   128.28    25.21   151.82
+ 140.29    59.405  265.7    108.9569 106.9804 245.02   119.1151 139.31
+ 182.73   476.355  218.52    38.235   35.0201 140.26  ], turbulace is 0
+30
+Action shape is (30,)
+Action min and max is (-1, 1)
+Quantity is 0, order of | 0 AAPL sell | not completed.
+Quantity is 0, order of | 0 CSCO sell | not completed.
+Quantity is 0, order of | 0 IBM sell | not completed.
+Quantity is 0, order of | 0 MRK sell | not completed.
+Quantity is 0, order of | 0 TRV sell | not completed.
+Quantity is 0, order of | 0 CRM sell | not completed.
+Quantity is 0, order of | 0 WMT sell | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 205.31 
+Quantity is 0, order of | 0 BA buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 48.35 
+Order of | 1 CVX buy | did not go through.
+Trying to Buy 1 Available cash is 56.7,The stock price is 162.61 
+Quantity is 0, order of | 0 GS buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 128.28 
+Quantity is 0, order of | 0 KO buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 476.355 
+Quantity is 0, order of | 0 V buy | not completed.
+Trying to Buy 1 Available cash is 56.7,The stock price is 35.0201 
+Order of | 1 DIS buy | did not go through.
+Market closing soon. Stop trading.
