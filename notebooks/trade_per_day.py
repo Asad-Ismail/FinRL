@@ -292,8 +292,9 @@ class AlpacaPaperTrading():
         positions = self.alpaca.list_positions()
         stocks = [0] * len(self.stockUniverse)
         for position in positions:
-            ind = self.stockUniverse.index(position.symbol)
-            stocks[ind] = ( abs(int(float(position.qty))))
+            if position.symbol in self.stockUniverse:
+                ind = self.stockUniverse.index(position.symbol)
+                stocks[ind] = ( abs(int(float(position.qty))))
         
         #stocks = np.asarray(stocks, dtype = float)
         cash = float(self.alpaca.get_account().cash)
@@ -355,7 +356,8 @@ class AlpacaPaperTrading():
 
         return sigmoid(ary / thresh) * thresh
 
-trained_ticks=['AAPL',
+trained_ticks=[
+  'AAPL',
   'AMGN',
   'AXP',
   'BA',
@@ -395,8 +397,8 @@ def get_nth_previous_date(n):
     nth_previous_date = today - timedelta(days=n)
     return nth_previous_date.strftime('%Y-%m-%d')
 
-API_KEY = "PKFHY1CXFUGZAG2PGYRT"
-API_SECRET = "I6BYnlAk7AVL3Ry141OEQmsjPjgwPtdPjTcpJkfB"
+API_KEY = "PK3EL71L7LP2AJF2D8C9"
+API_SECRET = "He2HPgs8axkITDNSwcIl487JOR7twZcnxdvegCOA"
 API_BASE_URL = 'https://paper-api.alpaca.markets'
 data_url = 'wss://data.alpaca.markets'
 
@@ -437,7 +439,7 @@ paper_trading_erl = AlpacaPaperTrading(df=processed,
                                       time_interval = '15Min', 
                                       drl_lib = 'stable_baselines3', 
                                       agent = 'ppo', 
-                                      cwd = './best_trained_model/PPO_900k.zip', 
+                                      cwd = './best_trained_model/PPO_6000k.zip', 
                                       stock_dim = stock_dim, 
                                       action_dim= stock_dim, 
                                       API_KEY = API_KEY, 
