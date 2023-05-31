@@ -49,7 +49,8 @@ class AlpacaProcessor:
         # from trepan.api import debug;debug()
         # filter opening time of the New York Stock Exchange (NYSE) (from 9:30 am to 4:00 pm) if time_interval < 1D
         day_delta = 86400000000000  # pd.Timedelta('1D').delta == 86400000000000
-        if pd.Timedelta(time_interval).delta < day_delta:
+        #if pd.Timedelta(time_interval).delta < day_delta:
+        if int(pd.Timedelta(time_interval).to_timedelta64()) < day_delta:
             NYSE_open_hour = "14:30"  # in UTC
             NYSE_close_hour = "20:59"  # in UTC
             data_df = barset.between_time(NYSE_open_hour, NYSE_close_hour)
@@ -292,7 +293,16 @@ class AlpacaProcessor:
                 )
         #        print("Successfully transformed into array")
         return price_array, tech_array, turbulence_array
+    
+    def get_trading_days(self, start, end):
+        nyse = tc.get_calendar("NYSE")
+        df = nyse.sessions_in_range(pd.Timestamp(start), pd.Timestamp(end))
+        trading_days = []
+        for day in df:
+            trading_days.append(str(day)[:10])
 
+        return trading_days
+    '''
     def get_trading_days(self, start, end):
         nyse = tc.get_calendar("NYSE")
         df = nyse.sessions_in_range(
@@ -303,7 +313,7 @@ class AlpacaProcessor:
             trading_days.append(str(day)[:10])
 
         return trading_days
-
+    '''
     def fetch_latest_data(
         self, ticker_list, time_interval, tech_indicator_list, limit=100
     ) -> pd.DataFrame:

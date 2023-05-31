@@ -707,6 +707,13 @@ def train(
     env,
     model_name,
     if_vix=True,
+    
+    initial_account=1000,
+    max_stock=5,
+    initial_capital=1000,
+    buy_cost_pct=1e-1,
+    sell_cost_pct=1e-1,
+    
     **kwargs,
 ):
     # download data
@@ -725,7 +732,8 @@ def train(
         "turbulence_array": turbulence_array,
         "if_train": True,
     }
-    env_instance = env(config=env_config)
+    env_instance = env(config=env_config,initial_account=initial_account,max_stock=max_stock,initial_capital=initial_capital,
+                      buy_cost_pct=buy_cost_pct,sell_cost_pct=sell_cost_pct)
 
     # read parameters
     cwd = kwargs.get("cwd", "./" + str(model_name))
@@ -766,6 +774,13 @@ def test(
     env,
     model_name,
     if_vix=True,
+    
+    initial_account=1000,
+    max_stock=5,
+    initial_capital=1000,
+    buy_cost_pct=1e-1,
+    sell_cost_pct=1e-1,
+    
     **kwargs,
 ):
     # import data processor
@@ -789,7 +804,8 @@ def test(
         "turbulence_array": turbulence_array,
         "if_train": False,
     }
-    env_instance = env(config=env_config)
+    env_instance = env(config=env_config,initial_account=initial_account,max_stock=max_stock,initial_capital=initial_capital,
+                      buy_cost_pct=buy_cost_pct,sell_cost_pct=sell_cost_pct)
 
     # load elegantrl needs state dim, action dim and net dim
     net_dimension = kwargs.get("net_dimension", 2**7)
