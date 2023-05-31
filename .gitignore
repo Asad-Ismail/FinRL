@@ -151,3 +151,5 @@ alpaca_processor_test.py
 
 *.pth
 *.zip
+
+cred_config.py
