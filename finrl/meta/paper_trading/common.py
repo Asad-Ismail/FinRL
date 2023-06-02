@@ -411,7 +411,7 @@ class PendulumEnv(gym.Wrapper):  # a demo of custom gym env
         return state.reshape(self.state_dim), float(reward), done, info_dict
 
 
-def train_agent(args: Config):
+def train_agent(args: Config,pretrain=None):
     args.init_before_training()
 
     env = build_env(args.env_class, args.env_args)
@@ -426,6 +426,17 @@ def train_agent(args: Config):
         eval_times=args.eval_times,
         cwd=args.cwd,
     )
+    
+    if pretrain:
+            try:
+                cwd = pretrain + "/actor.pth"
+                print(f"| load actor from: {cwd}")
+                agent.act.load_state_dict(
+                    torch.load(cwd, map_location=lambda storage, loc: storage)
+                )
+            except BaseException:
+                raise ValueError("Fail to load agent!")    
+    
     torch.set_grad_enabled(False)
     while True:  # start training
         buffer_items = agent.explore_env(env, args.horizon_len)
@@ -623,10 +634,10 @@ class DRLAgent:
                 )
         return model
 
-    def train_model(self, model, cwd, total_timesteps=5000):
+    def train_model(self, model, cwd, total_timesteps=5000,pretrain=None):
         model.cwd = cwd
         model.break_step = total_timesteps
-        train_agent(model)
+        train_agent(model,pretrain)
 
     @staticmethod
     def DRL_prediction(model_name, cwd, net_dimension, environment):
@@ -714,6 +725,8 @@ def train(
     buy_cost_pct=1e-1,
     sell_cost_pct=1e-1,
     
+    pretrain_path=None,
+    
     **kwargs,
 ):
     # download data
@@ -749,9 +762,7 @@ def train(
             turbulence_array=turbulence_array,
         )
         model = agent.get_model(model_name, model_kwargs=erl_params)
-        trained_model = agent.train_model(
-            model=model, cwd=cwd, total_timesteps=break_step
-        )
+        trained_model = agent.train_model(model=model, cwd=cwd, total_timesteps=break_step,pretrain=pretrain_path)
 
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
@@ -796,6 +807,9 @@ def test(
         data = dp.add_vix(data)
     else:
         data = dp.add_turbulence(data)
+    
+    returns_df = data[['timestamp']]
+    
     price_array, tech_array, turbulence_array = dp.df_to_array(data, if_vix)
 
     env_config = {
@@ -810,7 +824,6 @@ def test(
     # load elegantrl needs state dim, action dim and net dim
     net_dimension = kwargs.get("net_dimension", 2**7)
     cwd = kwargs.get("cwd", "./" + str(model_name))
-    print("price_array: ", len(price_array))
 
     if drl_lib == "elegantrl":
         DRLAgent_erl = DRLAgent
@@ -820,7 +833,13 @@ def test(
             net_dimension=net_dimension,
             environment=env_instance,
         )
-        return episode_total_assets
+        # Repeat each element in the price list n times
+        n = len(ticker_list)  # df rows has tickerlist per 
+        repeated_prices = np.repeat(episode_total_assets, n)
+
+        # Add the repeated prices to the dataframe
+        returns_df['account'] = repeated_prices
+        return episode_total_assets,returns_df
 
 
 # -----------------------------------------------------------------------------------------------------------------------------------------
@@ -865,11 +884,24 @@ def alpaca_history(key, secret, url, start, end):
     return df, cumu_returns
 
 
-def DIA_history(start):
-    data_df = yf.download(["^DJI"], start=start, interval="5m")
-    data_df = data_df.iloc[:]
+def DIA_history(start,end=None):
+    if end is None:
+        data_df = yf.download(["^DJI"], start=start, interval="60m")
+    else:
+        data_df = yf.download(["^DJI"], start=start,end=end, interval="60m")
+        
     baseline_returns = data_df["Adj Close"].values / data_df["Adj Close"].values[0]
-    return data_df, baseline_returns
+    data_df.reset_index(inplace=True)
+    #print(data_df)
+    # Change from per timestamp to per day
+    # Ensure 'Datetime' column is in datetime format
+    data_df['Date'] = data_df['Datetime'].dt.date
+    # Group by date and get last observation per day
+    df_daily = data_df.groupby(data_df['Datetime'].dt.date).last()
+    # Calculate daily returns
+    df_daily['Daily_Return'] = df_daily["Adj Close"].pct_change()
+    
+    return df_daily, baseline_returns
 
 
 # -----------------------------------------------------------------------------------------------------------------------------------------

@@ -218,6 +218,7 @@ class PaperTradingAlpaca:
                 a_tensor = self.act(s_tensor)
                 action = a_tensor.detach().cpu().numpy()[0]
             action = (action * self.max_stock).astype(int)
+            print(f"Action to be taken is {action}")
 
         elif self.drl_lib == "rllib":
             action = self.agent.compute_single_action(state)
@@ -232,11 +233,12 @@ class PaperTradingAlpaca:
 
         self.stocks_cd += 1
         if self.turbulence_bool == 0:
-            min_action = 10  # stock_cd
+            min_action = 0  # stock_cd
             threads = []
             for index in np.where(action < -min_action)[0]:  # sell_index:
                 sell_num_shares = min(self.stocks[index], -action[index])
                 qty = abs(int(sell_num_shares))
+                print(f"Number of stock of index {index} to sell {qty}")
                 respSO = []
                 tSubmitOrder = threading.Thread(
                     target=self.submitOrder(
@@ -257,13 +259,15 @@ class PaperTradingAlpaca:
                     tmp_cash = 0
                 else:
                     tmp_cash = self.cash
-                buy_num_shares = min(
-                    tmp_cash // self.price[index], abs(int(action[index]))
-                )
+                buy_num_shares = min(tmp_cash // self.price[index], abs(int(action[index])))
+                
+                print(f"Cash available is {self.cash} trying to buy {self.price[index]}")
+                
                 if buy_num_shares != buy_num_shares:  # if buy_num_change = nan
                     qty = 0  # set to 0 quantity
                 else:
                     qty = abs(int(buy_num_shares))
+                print(f"Number of stock of index {index} to buy {qty}")
                 respSO = []
                 tSubmitOrder = threading.Thread(
                     target=self.submitOrder(

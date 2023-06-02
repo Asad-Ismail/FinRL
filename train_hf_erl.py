@@ -47,10 +47,12 @@ from pandas.tseries.offsets import BDay  # BDay is business day, not birthday...
 
 today = datetime.datetime.today()
 
+##Train on one month and test on last 5 days
 TEST_END_DATE = (today - BDay(1)).to_pydatetime().date()
-TEST_START_DATE = (TEST_END_DATE - BDay(1)).to_pydatetime().date()
+TEST_END_DATE_Backtest= today.date()
+TEST_START_DATE = (TEST_END_DATE - BDay(5)).to_pydatetime().date()
 TRAIN_END_DATE = (TEST_START_DATE - BDay(1)).to_pydatetime().date()
-TRAIN_START_DATE = (TRAIN_END_DATE - BDay(5)).to_pydatetime().date()
+TRAIN_START_DATE = (TRAIN_END_DATE - BDay(30)).to_pydatetime().date()
 TRAINFULL_START_DATE = TRAIN_START_DATE
 TRAINFULL_END_DATE = TEST_END_DATE
 
@@ -58,6 +60,7 @@ TRAIN_START_DATE = str(TRAIN_START_DATE)
 TRAIN_END_DATE = str(TRAIN_END_DATE)
 TEST_START_DATE = str(TEST_START_DATE)
 TEST_END_DATE = str(TEST_END_DATE)
+TEST_END_DATE_Backtest= str(TEST_END_DATE_Backtest)
 TRAINFULL_START_DATE = str(TRAINFULL_START_DATE)
 TRAINFULL_END_DATE = str(TRAINFULL_END_DATE)
 
@@ -73,18 +76,20 @@ train(
     end_date=TRAIN_END_DATE,
     ticker_list=ticker_list,
     data_source="alpaca",
-    time_interval="1Min",
+    time_interval="60Min",
     technical_indicator_list=INDICATORS,
     drl_lib="elegantrl",
     env=env,
     model_name="ppo",
     if_vix=True,
     ## Added these arguments
-    initial_account=1000,
+    initial_account=500,
     max_stock=5,
-    initial_capital=1000,
+    initial_capital=500,
     buy_cost_pct=1e-1,
     sell_cost_pct=1e-1,
+    
+    pretrain_path="pretrain",
     
     API_KEY=DATA_API_KEY,
     API_SECRET=DATA_API_SECRET,
@@ -94,19 +99,19 @@ train(
     break_step=1e5,
 )
 
-account_value_erl = test(
+account_value_erl,res_df = test(
     start_date=TEST_START_DATE,
     end_date=TEST_END_DATE,
     ticker_list=ticker_list,
     data_source="alpaca",
-    time_interval="1Min",
+    time_interval="60Min",
     technical_indicator_list=INDICATORS,
     drl_lib="elegantrl",
     env=env,
     model_name="ppo",
     if_vix=True,
      ## Added these arguments
-    initial_account=1000,
+    initial_account=500,
     max_stock=5,
     initial_capital=1000,
     buy_cost_pct=1e-1,
@@ -119,95 +124,72 @@ account_value_erl = test(
     net_dimension=ERL_PARAMS["net_dimension"],
 )
 
-print(f"Total gain after trading for test time {account_value_erl-1000} $ ")
 
+
+def backtest(df_test,df_dj,test_account_values,dj_returns):
+    # Process df_testing
+    # Convert the timestamp column to datetime
+    df_test['timestamp'] = pd.to_datetime(df_test['timestamp'])
+    # Remove the time component of the timestamp
+    df_test['Date'] = df_test['timestamp'].dt.date
+    # Remove duplicates based on the timestamp
+    df_test = df_test.drop_duplicates(subset='Date')
+    #res_df.reset_index(inplace=True)
+    df_test['Daily_Return'] = df_test["account"].pct_change()
+    
+    # Merge both dataframes on Date
+    merged_df = pd.merge(df_test, df_dj, on='Date', suffixes=('_test', '_dj'))
+    
+    # Plotting
+    plt.figure(figsize=(14,9))
+    plt.plot(merged_df['Date'].values, merged_df['Daily_Return_test'].values,'-o', label='My strategy')
+    plt.plot(merged_df['Date'].values, merged_df['Daily_Return_dj'].values,'-o', label='DJ')
+    plt.xlabel('Date')
+    plt.ylabel('Daily Return')
+    plt.legend()
+    plt.savefig('returns.png')
+    
+    myreturn=test_account_values[-1]/test_account_values[0]
+    
+    return myreturn,dj_returns[-1]
+
+df_djia, cumu_djia = DIA_history(start=TEST_START_DATE,end=TEST_END_DATE_Backtest)
+
+algo_return,dj_return=backtest(res_df,df_djia,account_value_erl,cumu_djia)
+
+if dj_return>algo_return:
+    print(f"Dow jones results {dj_return} over week is greater than RL agent {algo_return}")
+    print(f"It does not make sense to continue exiting!!")
+    exit()
+
+
+print(f"Dow jones results {dj_return} over week is worse than RL agent {algo_return}")
+print(f"Now training on whole data!!")
+    
 train(
     start_date=TRAINFULL_START_DATE,  # After tuning well, retrain on the training and testing sets
     end_date=TRAINFULL_END_DATE,
     ticker_list=ticker_list,
     data_source="alpaca",
-    time_interval="1Min",
+    time_interval="60Min",
     technical_indicator_list=INDICATORS,
     drl_lib="elegantrl",
     env=env,
     model_name="ppo",
     if_vix=True,
     
-    initial_account=1000,
+    initial_account=500,
     max_stock=5,
-    initial_capital=1000,
+    initial_capital=500,
     buy_cost_pct=1e-1,
     sell_cost_pct=1e-1,
+    
+    pretrain_path="pretrain",
     
     API_KEY=DATA_API_KEY,
     API_SECRET=DATA_API_SECRET,
     API_BASE_URL=DATA_API_BASE_URL,
     erl_params=ERL_PARAMS,
     cwd="./papertrading_erl_retrain",
-    break_step=2e5,
+    break_step=2e10,
 )
-
-action_dim = len(DOW_30_TICKER)
-state_dim = (
-    1 + 2 + 3 * action_dim + len(INDICATORS) * action_dim
-)  # Calculate the DRL state dimension manually for paper trading. amount + (turbulence, turbulence_bool) + (price, shares, cd (holding time)) * stock_dim + tech_dim
-
-paper_trading_erl = PaperTradingAlpaca(
-    ticker_list=DOW_30_TICKER,
-    time_interval="1Min",
-    drl_lib="elegantrl",
-    agent="ppo",
-    cwd="./papertrading_erl_retrain",
-    net_dim=ERL_PARAMS["net_dimension"],
-    state_dim=state_dim,
-    action_dim=action_dim,
-    API_KEY=TRADING_API_KEY,
-    API_SECRET=TRADING_API_SECRET,
-    API_BASE_URL=TRADING_API_BASE_URL,
-    tech_indicator_list=INDICATORS,
-    turbulence_thresh=30,
-    max_stock=5,
-)
-
-paper_trading_erl.run()
-
-# Check Portfolio Performance
-# ## Get cumulative return
-df_erl, cumu_erl = alpaca_history(
-    key=DATA_API_KEY,
-    secret=DATA_API_SECRET,
-    url=DATA_API_BASE_URL,
-    start="2023-05-20",  # must be within 1 month
-    end="2023-05-30",
-)  # change the date if error occurs
-
-df_djia, cumu_djia = DIA_history(start="2023-05-20")
-returns_erl = cumu_erl - 1
-returns_dia = cumu_djia - 1
-returns_dia = returns_dia[: returns_erl.shape[0]]
-
-# plot and save
-import matplotlib.pyplot as plt
-
-plt.figure(dpi=1000)
-plt.grid()
-plt.grid(which="minor", axis="y")
-plt.title("Stock Trading (Paper trading)", fontsize=20)
-plt.plot(returns_erl, label="ElegantRL Agent", color="red")
-# plt.plot(returns_sb3, label = 'Stable-Baselines3 Agent', color = 'blue' )
-# plt.plot(returns_rllib, label = 'RLlib Agent', color = 'green')
-plt.plot(returns_dia, label="DJIA", color="grey")
-plt.ylabel("Return", fontsize=16)
-plt.xlabel("Year 2021", fontsize=16)
-plt.xticks(size=14)
-plt.yticks(size=14)
-ax = plt.gca()
-ax.xaxis.set_major_locator(ticker.MultipleLocator(78))
-ax.xaxis.set_minor_locator(ticker.MultipleLocator(6))
-ax.yaxis.set_minor_locator(ticker.MultipleLocator(0.005))
-ax.yaxis.set_major_formatter(ticker.PercentFormatter(xmax=1, decimals=2))
-ax.xaxis.set_major_formatter(
-    ticker.FixedFormatter(["", "10-19", "", "10-20", "", "10-21", "", "10-22"])
-)
-plt.legend(fontsize=10.5)
-plt.savefig("papertrading_stock.png")
