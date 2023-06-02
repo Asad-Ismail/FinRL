@@ -3,6 +3,9 @@
 # %pip install --upgrade git+https://github.com/AI4Finance-Foundation/FinRL.git
 # Alpaca keys
 from __future__ import annotations
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 from cred_config import *
 
