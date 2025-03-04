@@ -1,6 +1,7 @@
 """Contains methods and classes to collect data from
 tushare API
 """
+
 from __future__ import annotations
 
 import pandas as pd
@@ -23,7 +24,7 @@ class TushareDownloader:
     -------
     fetch_data()
         Fetches data from tushare API
-    date：date
+    date: date
     Open: opening price
     High: the highest price
     Close: closing price
@@ -61,7 +62,9 @@ class TushareDownloader:
                 tic[0:6], start=self.start_date, end=self.end_date
             )
             temp_df["tic"] = tic[0:6]
-            data_df = data_df.append(temp_df)
+            # data_df = data_df.append(temp_df)
+            data_df = pd.concat([data_df, temp_df], axis=0, ignore_index=True)
+
         data_df = data_df.reset_index(level="date")
 
         # create day of the week column (monday = 0)

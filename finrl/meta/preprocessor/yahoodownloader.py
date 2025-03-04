@@ -1,6 +1,7 @@
 """Contains methods and classes to collect data from
 Yahoo Finance API
 """
+
 from __future__ import annotations
 
 import pandas as pd
@@ -32,7 +33,7 @@ class YahooDownloader:
         self.end_date = end_date
         self.ticker_list = ticker_list
 
-    def fetch_data(self, proxy=None) -> pd.DataFrame:
+    def fetch_data(self, proxy=None, auto_adjust=False) -> pd.DataFrame:
         """Fetches data from Yahoo API
         Parameters
         ----------
@@ -45,26 +46,43 @@ class YahooDownloader:
         """
         # Download and save the data in a pandas DataFrame:
         data_df = pd.DataFrame()
+        num_failures = 0
         for tic in self.ticker_list:
             temp_df = yf.download(
-                tic, start=self.start_date, end=self.end_date, proxy=proxy
+                tic,
+                start=self.start_date,
+                end=self.end_date,
+                proxy=proxy,
+                auto_adjust=auto_adjust,
             )
+            if temp_df.columns.nlevels != 1:
+                temp_df.columns = temp_df.columns.droplevel(1)
             temp_df["tic"] = tic
-            data_df = data_df.append(temp_df)
+            if len(temp_df) > 0:
+                # data_df = data_df.append(temp_df)
+                data_df = pd.concat([data_df, temp_df], axis=0)
+            else:
+                num_failures += 1
+        if num_failures == len(self.ticker_list):
+            raise ValueError("no data is fetched.")
         # reset the index, we want to use numbers as index instead of dates
         data_df = data_df.reset_index()
         try:
             # convert the column names to standardized names
-            data_df.columns = [
-                "date",
-                "open",
-                "high",
-                "low",
-                "close",
-                "adjcp",
-                "volume",
-                "tic",
-            ]
+            data_df.rename(
+                columns={
+                    "Date": "date",
+                    "Adj Close": "adjcp",
+                    "Close": "close",
+                    "High": "high",
+                    "Low": "low",
+                    "Volume": "volume",
+                    "Open": "open",
+                    "tic": "tic",
+                },
+                inplace=True,
+            )
+
             # use adjusted close price instead of close price
             data_df["close"] = data_df["adjcp"]
             # drop the adjusted close price column

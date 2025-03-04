@@ -1,7 +1,9 @@
 """Reference: https://github.com/AI4Finance-LLC/FinRL"""
+
 from __future__ import annotations
 
 import datetime
+import time
 from datetime import date
 from datetime import timedelta
 from sqlite3 import Timestamp
@@ -18,7 +20,16 @@ import numpy as np
 import pandas as pd
 import pytz
 import yfinance as yf
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 from stockstats import StockDataFrame as Sdf
+from webdriver_manager.chrome import ChromeDriverManager
+
+### Added by aymeric75 for scrap_data function
 
 
 class YahooFinanceProcessor:
@@ -55,38 +66,151 @@ class YahooFinanceProcessor:
     ...
     """
 
-    def download_data(
-        self, ticker_list: list[str], start_date: str, end_date: str, time_interval: str
-    ) -> pd.DataFrame:
+    ######## ADDED BY aymeric75 ###################
+
+    def date_to_unix(self, date_str) -> int:
+        """Convert a date string in yyyy-mm-dd format to Unix timestamp."""
+        dt = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+        return int(dt.timestamp())
+
+    def fetch_stock_data(self, stock_name, period1, period2) -> pd.DataFrame:
+        # Base URL
+        url = f"https://finance.yahoo.com/quote/{stock_name}/history/?period1={period1}&period2={period2}&filter=history"
+
+        # Selenium WebDriver Setup
+        options = Options()
+        options.add_argument("--headless")  # Headless for performance
+        options.add_argument("--disable-gpu")  # Disable GPU for compatibility
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()), options=options
+        )
+
+        # Navigate to the URL
+        driver.get(url)
+        driver.maximize_window()
+        time.sleep(5)  # Wait for redirection and page load
+
+        # Handle potential popup
+        try:
+            RejectAll = driver.find_element(
+                By.XPATH, '//button[@class="btn secondary reject-all"]'
+            )
+            action = ActionChains(driver)
+            action.click(on_element=RejectAll)
+            action.perform()
+            time.sleep(5)
+
+        except Exception as e:
+            print("Popup not found or handled:", e)
+
+        # Parse the page for the table
+        soup = BeautifulSoup(driver.page_source, "html.parser")
+        table = soup.find("table")
+        if not table:
+            raise Exception("No table found after handling redirection and popup.")
+
+        # Extract headers
+        headers = [th.text.strip() for th in table.find_all("th")]
+        headers[4] = "Close"
+        headers[5] = "Adj Close"
+        headers = ["date", "open", "high", "low", "close", "adjcp", "volume"]
+        # , 'tic', 'day'
+
+        # Extract rows
+        rows = []
+        for tr in table.find_all("tr")[1:]:  # Skip header row
+            cells = [td.text.strip() for td in tr.find_all("td")]
+            if len(cells) == len(headers):  # Only add rows with correct column count
+                rows.append(cells)
+
+        # Create DataFrame
+        df = pd.DataFrame(rows, columns=headers)
+
+        # Convert columns to appropriate data types
+        def safe_convert(value, dtype):
+            try:
+                return dtype(value.replace(",", ""))
+            except ValueError:
+                return value
+
+        df["open"] = df["open"].apply(lambda x: safe_convert(x, float))
+        df["high"] = df["high"].apply(lambda x: safe_convert(x, float))
+        df["low"] = df["low"].apply(lambda x: safe_convert(x, float))
+        df["close"] = df["close"].apply(lambda x: safe_convert(x, float))
+        df["adjcp"] = df["adjcp"].apply(lambda x: safe_convert(x, float))
+        df["volume"] = df["volume"].apply(lambda x: safe_convert(x, int))
+
+        # Add 'tic' column
+        df["tic"] = stock_name
+
+        # Add 'day' column
+        start_date = datetime.datetime.fromtimestamp(period1)
+        df["date"] = pd.to_datetime(df["date"])
+        df["day"] = (df["date"] - start_date).dt.days
+        df = df[df["day"] >= 0]  # Exclude rows with days before the start date
+
+        # Reverse the DataFrame rows
+        df = df.iloc[::-1].reset_index(drop=True)
+
+        return df
+
+    def scrap_data(self, stock_names, start_date, end_date) -> pd.DataFrame:
+        """Fetch and combine stock data for multiple stock names."""
+        period1 = self.date_to_unix(start_date)
+        period2 = self.date_to_unix(end_date)
+
+        all_dataframes = []
+        total_stocks = len(stock_names)
+
+        for i, stock_name in enumerate(stock_names):
+            try:
+                print(
+                    f"Processing {stock_name} ({i + 1}/{total_stocks})... {(i + 1) / total_stocks * 100:.2f}% complete."
+                )
+                df = self.fetch_stock_data(stock_name, period1, period2)
+                all_dataframes.append(df)
+            except Exception as e:
+                print(f"Error fetching data for {stock_name}: {e}")
+
+        combined_df = pd.concat(all_dataframes, ignore_index=True)
+        combined_df = combined_df.sort_values(by=["day", "tick"]).reset_index(drop=True)
+
+        return combined_df
+
+    ######## END ADDED BY aymeric75 ###################
+
+    def convert_interval(self, time_interval: str) -> str:
         # Convert FinRL 'standardised' time periods to Yahoo format: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo
-        if time_interval == "1Min":
-            time_interval = "1m"
-        elif time_interval == "2Min":
-            time_interval = "2m"
-        elif time_interval == "5Min":
-            time_interval = "5m"
-        elif time_interval == "15Min":
-            time_interval = "15m"
-        elif time_interval == "30Min":
-            time_interval = "30m"
-        elif time_interval == "60Min":
-            time_interval = "60m"
-        elif time_interval == "90Min":
-            time_interval = "90m"
-        elif time_interval == "1H":
-            time_interval = "1h"
-        elif time_interval == "1D":
-            time_interval = "1d"
-        elif time_interval == "5D":
-            time_interval = "5d"
+        if time_interval in [
+            "1Min",
+            "2Min",
+            "5Min",
+            "15Min",
+            "30Min",
+            "60Min",
+            "90Min",
+        ]:
+            time_interval = time_interval.replace("Min", "m")
+        elif time_interval in ["1H", "1D", "5D", "1h", "1d", "5d"]:
+            time_interval = time_interval.lower()
         elif time_interval == "1W":
             time_interval = "1wk"
-        elif time_interval == "1M":
-            time_interval = "1mo"
-        elif time_interval == "3M":
-            time_interval = "3mo"
+        elif time_interval in ["1M", "3M"]:
+            time_interval = time_interval.replace("M", "mo")
         else:
             raise ValueError("wrong time_interval")
+
+        return time_interval
+
+    def download_data(
+        self,
+        ticker_list: list[str],
+        start_date: str,
+        end_date: str,
+        time_interval: str,
+        proxy: str | dict = None,
+    ) -> pd.DataFrame:
+        time_interval = self.convert_interval(time_interval)
 
         self.start = start_date
         self.end = end_date
@@ -98,27 +222,32 @@ class YahooFinanceProcessor:
         delta = timedelta(days=1)
         data_df = pd.DataFrame()
         for tic in ticker_list:
+            current_tic_start_date = start_date
             while (
-                start_date <= end_date
+                current_tic_start_date <= end_date
             ):  # downloading daily to workaround yfinance only allowing  max 7 calendar (not trading) days of 1 min data per single download
                 temp_df = yf.download(
                     tic,
-                    start=start_date,
-                    end=start_date + delta,
+                    start=current_tic_start_date,
+                    end=current_tic_start_date + delta,
                     interval=self.time_interval,
+                    proxy=proxy,
                 )
+                if temp_df.columns.nlevels != 1:
+                    temp_df.columns = temp_df.columns.droplevel(1)
+
                 temp_df["tic"] = tic
                 data_df = pd.concat([data_df, temp_df])
-                start_date += delta
+                current_tic_start_date += delta
 
         data_df = data_df.reset_index().drop(columns=["Adj Close"])
         # convert the column names to match processor_alpaca.py as far as poss
         data_df.columns = [
             "timestamp",
-            "open",
+            "close",
             "high",
             "low",
-            "close",
+            "open",
             "volume",
             "tic",
         ]
@@ -370,9 +499,7 @@ class YahooFinanceProcessor:
 
     def get_trading_days(self, start: str, end: str) -> list[str]:
         nyse = tc.get_calendar("NYSE")
-        df = nyse.sessions_in_range(
-            pd.Timestamp(start, tz=pytz.UTC), pd.Timestamp(end, tz=pytz.UTC)
-        )
+        df = nyse.sessions_in_range(pd.Timestamp(start), pd.Timestamp(end))
         trading_days = []
         for day in df:
             trading_days.append(str(day)[:10])
@@ -387,35 +514,7 @@ class YahooFinanceProcessor:
         tech_indicator_list: list[str],
         limit: int = 100,
     ) -> pd.DataFrame:
-        # Convert FinRL 'standardised' Alpaca time periods to Yahoo format: 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo
-        if time_interval == "1Min":
-            time_interval = "1m"
-        elif time_interval == "2Min":
-            time_interval = "2m"
-        elif time_interval == "5Min":
-            time_interval = "5m"
-        elif time_interval == "15Min":
-            time_interval = "15m"
-        elif time_interval == "30Min":
-            time_interval = "30m"
-        elif time_interval == "60Min":
-            time_interval = "60m"
-        elif time_interval == "90Min":
-            time_interval = "90m"
-        elif time_interval == "1H":
-            time_interval = "1h"
-        elif time_interval == "1D":
-            time_interval = "1d"
-        elif time_interval == "5D":
-            time_interval = "5d"
-        elif time_interval == "1W":
-            time_interval = "1wk"
-        elif time_interval == "1M":
-            time_interval = "1mo"
-        elif time_interval == "3M":
-            time_interval = "3mo"
-        else:
-            raise ValueError("wrong time_interval")
+        time_interval = self.convert_interval(time_interval)
 
         end_datetime = datetime.datetime.now()
         start_datetime = end_datetime - datetime.timedelta(
